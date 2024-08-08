@@ -1,0 +1,485 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Netflix</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/fevicon.svg" />
+
+    <link rel="stylesheet" href="stylec.css" />
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <span>
+          <img width="100" src="assets/images/logo.svg" alt="" />
+        </span>
+        <div>
+          <button class="signup">Sign up</button>
+        </div>
+      </nav>
+      <div class="box">
+        <h1>Unlimited movies, TV shows, and more</h1>
+        <br />
+        <h2>Watch anywhere. Cancel anytime.</h2>
+        <h2>
+          Ready to watch? Enter your email to create or restart your membership.
+          <h2></h2>
+        </h2>
+        <div class="btn">
+          <input placeholder="Enter Email" class="input" type="text" />
+          <button class="getbtn">
+            Get Started
+            <span><img width="20" src="assets/images/down.svg" alt="" /></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <section class="section1">
+      <div>
+        <h1>
+          Enjoy on your TV
+          <h2>
+            Watch on Smart TVs, Playstation, Xbox, Chromecast, <br />
+            Apple TV, Blu-ray players, and more.
+          </h2>
+        </h1>
+      </div>
+      <div class="img1">
+        <img
+          src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
+          alt=""
+        />
+        <video
+          class="vid1"
+          data-uia="nmhp-card-animation-asset-video"
+          autoplay=""
+          playsinline=""
+          muted=""
+          loop=""
+        >
+          <source
+            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </section>
+    <section class="section2">
+      <div>
+        <h1>
+          Download your shows to <br />
+          watch offline
+          <h2>
+            Save your favorites easily and always have something <br />
+            to watch.
+          </h2>
+        </h1>
+      </div>
+      <div>
+        <div class="divimg2">
+          <img class="img3" src="assets/images/netimg1.jpg" alt="" />
+          <div class="book">
+            <div>
+              <img class="bookimg" src="assets/images/netbookimg.png" alt="" />
+            </div>
+            <div>
+              <h5>
+                Stranger Things <br />
+                <b style="color: #0071eb">Downloading..</b>
+              </h5>
+            </div>
+            <div>
+              <img
+                style="width: 50%; position: relative; left: 70px"
+                src="assets/images/netdownload-icon.gif"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section3">
+      <div>
+        <h1>
+          Watch <br />
+          everywhere
+          <h2>
+            Stream unlimited movies and TV <br />
+            shows on your phone, tablet, laptop, <br />
+            and TV.
+          </h2>
+        </h1>
+      </div>
+      <div>
+        <img
+          style="visibility: hidden"
+          src="assets/images/netimg1.jpg"
+          alt=""
+        />
+      </div>
+    </section>
+    <section class="section4">
+      <div>
+        <h1>
+          Create profiles for kids
+
+          <h2>
+            Send kids on adventures with their favorite characters <br />
+            in a space made just for them—free with your <br />
+            membership.
+          </h2>
+        </h1>
+      </div>
+      <div class="img2">
+        <img src="assets/images/netimg2.jpg" alt="" />
+      </div>
+    </section>
+
+    <section>
+      <script>
+        function show() {
+          var x = document.getElementById("myDIV");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+            x.classList.toggle("hide-div");
+          } else {
+            x.style.display = "none";
+            x.classList.toggle("show-div");
+          }
+        }
+
+        // var a = 50;
+        // var b = 100;
+        // console.log("The sum  is  " + (a + b));
+        // console.log("The sum  is  " + (a + b + 100));
+        // console.log(typeof a, typeof b);
+        // var c = prompt("Enter you name");
+        // console.log("This is your name " + c);
+
+        // var d = confirm("Are you want to learn javascript ");
+        // if (d) {
+        //   console.log("you are enrolled");
+        // } else {
+        //   console.log("you are not enrolled");
+        // }
+        // const e = 77;
+        // console.log("is is constant value" + e);
+
+        // {
+        //   let a = 55;
+        //   console.log(a);
+        // }
+        // console.log(a);
+
+        // var x = "afnan";
+        // var y = 100;
+        // var z = true;
+        // var i = undefined;
+        // var j = null;
+        // console.log(x, y, z, i, j);
+        // console.log(typeof x, typeof y, typeof z, typeof i, typeof j);
+
+        // let obj = {
+        //   name: "Anas",
+        //   job: "on job",
+        // };
+        // console.log(obj);
+        // obj.salary = "100000";
+        // console.log(obj);
+        // obj.country = "pakistan";
+        // console.log(obj);
+        // var random = Math.floor(Math.random() * 3) + 1;
+
+        // Faulty Calculator
+
+        // var i = prompt("Enter First Number");
+        // var o = prompt("Perfrom Operation");
+        // var j = prompt("Enter Second Number");
+        // var k;
+
+        // if (o == "+") {
+        //   k = Number(i) - Number(j);
+        //   alert("The sum is :" + k);
+        // } else if (o == "-") {
+        //   k = Number(i) + Number(j);
+        //   alert("The minus is :" + k);
+        // } else if (o == "*") {
+        //   k = Number(i) / Number(j);
+        //   alert("The multiply is :" + k);
+        // } else if (o == "/") {
+        //   k = Number(i) * Number(j);
+        //   alert("The divid is :" + k);
+        // } else {
+        //   alert("You don't enter value");
+        // }
+
+        // Random business name generator
+
+        var random_number = Math.random();
+        let first_word, second_word, third_word;
+
+        // alert(random_number);
+
+        if (random_number < 0.33) {
+          first_word = "Crazy";
+        } else if (random_number < 0.66) {
+          first_word = "Amazing";
+        } else {
+          first_word = "Fire";
+        }
+
+        if (random_number > 0.33) {
+          second_word = "Engine";
+        } else if (random_number > 0.66) {
+          second_word = "Fire";
+        } else {
+          second_word = "Rock";
+        }
+
+        if (random_number > 0.33) {
+          third_word = "Limited";
+        } else if (random_number > 0.66) {
+          third_word = "LLC";
+        } else {
+          third_word = "Hub";
+        }
+
+        //  ATM Machine
+
+        // alert(`"this is business name :"${first_word}${second_word} ${third_word}`);
+
+        // alert("this is business name :" ,first_word + second_word + third_word);
+
+        // var fn = prompt("enter first name");
+        // var sn = prompt("enter Second name");
+        // var tn = prompt("enter third name");
+
+        // if (fn != 0 && sn != 0 && tn != 0) {
+        //   alert("This is your business name" + "  " + fn + "  " + sn + "  " + tn);
+        // } else {
+        //   alert("Please enter business name");
+        // }
+      </script>
+
+      <h5 class="h5">Frequently Asked Questions</h5>
+
+      <div class="faq">
+        <div class="faq1" onclick="show()">
+          What is Netflix?
+          <span class="show-div"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              role="img"
+              data-icon="PlusLarge"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span class="hide-div"
+              ><svg
+                style="transform: rotate(314deg)"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                role="img"
+                data-icon="PlusLarge"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                  fill="red"
+                ></path>
+              </svg>
+            </span>
+          </span>
+        </div>
+        <div id="myDIV" class="faq1anw" style="display: none">
+          Netflix is a streaming service that offers a wide variety of
+          award-winning TV shows, movies, anime, documentaries, and more on
+          thousands of internet-connected devices. <br />
+
+          You can watch as much as you want, whenever you want without a single
+          commercial – all for one low monthly price. There's always something
+          new to discover and new TV shows and movies are added every week!
+        </div>
+
+        <div class="faq1">
+          How much does Netflix Cost?
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              role="img"
+              data-icon="PlusLarge"
+              aria-hidden="true"
+              class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div class="faq1">
+          Where can i watch?
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              role="img"
+              data-icon="PlusLarge"
+              aria-hidden="true"
+              class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div class="faq1">
+          How do i cancle?
+
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              role="img"
+              data-icon="PlusLarge"
+              aria-hidden="true"
+              class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div class="faq1">
+          What can i watch on Netflix?
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              role="img"
+              data-icon="PlusLarge"
+              aria-hidden="true"
+              class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div class="faq1">
+          Is Netflix good for Kids?
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              role="img"
+              data-icon="PlusLarge"
+              aria-hidden="true"
+              class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+        </div>
+
+        <div class="box">
+          <h2>
+            Ready to watch? Enter your email to create or restart your
+            membership.
+            <h2></h2>
+          </h2>
+          <div class="btn">
+            <input placeholder="Enter Email" class="input" type="text" />
+            <button class="getbtn">
+              Get Started
+              <span
+                ><img width="20" src="assets/images/down.svg" alt=""
+              /></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-list">
+        <a href="">Questions? Contact us.</a>
+        <a href="">FAQ</a>
+        <a href="">Investor Relations</a>
+        <a href="">Privacy</a>
+        <a href="">Speed Test</a>
+        <a href=""> Netflix Pakistan </a>
+      </div>
+      <div class="footer-list">
+        <a href=""> Help Center</a>
+        <a href=""> Jobs</a>
+        <a href=""> Cookie Preferences</a>
+        <a href=""> Legal Notices</a>
+      </div>
+      <div class="footer-list">
+        <a href="">Account</a>
+        <a href=""> Ways to Watch</a>
+        <a href="">Corporate Information</a>
+        <a href=""> Only on Netflix</a>
+      </div>
+      <div class="footer-list">
+        <a href="">Media Center</a>
+        <a href="">Terms of Use</a>
+        <a href=""> Contact Us</a>
+      </div>
+    </footer>
+  </body>
+</html>
