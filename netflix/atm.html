@@ -17,6 +17,7 @@
         Digital Banking
       </h1>
     </div>
+
     <div id="flex-cen">
       <input
         type="number"
@@ -33,91 +34,136 @@
           </ul>
         </div>
       </div>
-
-      <!-- <p id="message"></p> -->
     </div>
+    <div class="main-h-divider">
+      <div class="h-divider">
+        <div id="flex">
+          <button
+            class="btn-check-balance"
+            id="btnspelling"
+            onclick="Check_balance()"
+          >
+            + Show Balance
+          </button>
+          <!-- <div><h2 id="Balance" class="Balanceee"></h2></div> -->
 
-    <div id="flex">
-      <button
-        class="btn-check-balance"
-        id="btnspelling"
-        onclick="Check_balance()"
-      >
-        + Show Balance
-      </button>
-      <h2 id="Balance" class="Balanceee"></h2>
+          <button
+            id="transferbtn"
+            class="btn-transfer-Amount"
+            onclick="transfer_amount()"
+          >
+            + Pay to
+          </button>
 
-      <button
-        id="widthdrawbtn"
-        class="btn-Widthraw-Amount"
-        onclick="widthdraw_amount()"
-      >
-        + Show Widthraw
-      </button>
-      <button
-        class="btn-check-balance-fast"
-        id="btnspellingfast"
-        onclick="show_fast_cash()"
-      >
-        + Show fast cash
-      </button>
-    </div>
+          <button
+            id="widthdrawbtn"
+            class="btn-Widthraw-Amount"
+            onclick="widthdraw_amount()"
+          >
+            + Show Widthraw
+          </button>
+          <button
+            class="btn-check-balance-fast"
+            id="btnspellingfast"
+            onclick="show_fast_cash()"
+          >
+            + Show fast cash
+          </button>
+        </div>
 
-    <div id="flex-widthdraw">
-      <input
-        type="number"
-        placeholder="Enter Widthraw Amount"
-        id="widthdrawvalue"
-      />
-      <p id="err"></p>
+        <div id="flex-widthdraw" class="drop">
+          <input
+            type="number"
+            placeholder="Enter Widthraw Amount"
+            id="widthdrawvalue"
+          />
+          <p id="err"></p>
 
-      <br />
-      <button onclick="calc_amount()">Done</button>
-    </div>
-    <div id="alertbox">
-      <div class="alert">
-        <ul>
-          <li id="widthdrawamounmsg"></li>
-          <li id="widthdrawamount"></li>
-        </ul>
+          <br />
+          <button onclick="calc_amount()">Done</button>
+        </div>
+
+        <div id="flex-transfer" class="drop1">
+          <select name="cars" id="cars" class="select">
+            <option value="Ubl">Salect Bank</option>
+
+            <option value="Ubl">Ubl</option>
+            <option value="Hbl">Hbl</option>
+            <option value="Alfalah">Alfalah</option>
+            <option value="Mezan">Mezan</option>
+          </select>
+          <br />
+
+          <input
+            type="number"
+            placeholder="Enter Account Number"
+            id="widthdrawvalue"
+          />
+          <br />
+
+          <input
+            type="number"
+            placeholder="Enter Widthraw Amount"
+            id="widthdrawvalue"
+          />
+          <p id="err"></p>
+
+          <br />
+          <button onclick="calc_amount()">Done</button>
+        </div>
+
+        <div id="alertbox">
+          <div class="alert">
+            <ul>
+              <li id="widthdrawamounmsg"></li>
+              <li id="widthdrawamount"></li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <!-- <div id="text-fastcash"><h3>Select fast cash option</h3></div> -->
+
+          <div id="flexfast5000" class="drop2">
+            <div id="text-fastcash"><h3>Select fast cash option</h3></div>
+
+            <input
+              type="number"
+              placeholder="Enter pin code"
+              id="inputvalue5000"
+              value="5000"
+              readonly
+              onclick="calc_fast_cash5000()"
+            />
+            <input
+              type="number"
+              placeholder="Enter pin code"
+              id="inputvalue10000"
+              value="10000"
+              readonly
+              onclick="calc_fast_cash10000()"
+            />
+            <input
+              type="number"
+              placeholder="Enter pin code"
+              id="inputvalue15000"
+              value="15000"
+              readonly
+              onclick="calc_fast_cash15000()"
+            />
+            <input
+              type="number"
+              placeholder="Enter pin code"
+              id="inputvalue20000"
+              value="20000"
+              readonly
+              onclick="calc_fast_cash20000()"
+            />
+          </div>
+
+          <div id="Balance" class="drop3 Balanceee"><h2></h2></div>
+        </div>
       </div>
-    </div>
-
-    <div id="text-fastcash"><h3>Select fast cash option</h3></div>
-
-    <div id="flexfast5000">
-      <input
-        type="number"
-        placeholder="Enter pin code"
-        id="inputvalue5000"
-        value="5000"
-        readonly
-        onclick="calc_fast_cash5000()"
-      />
-      <input
-        type="number"
-        placeholder="Enter pin code"
-        id="inputvalue10000"
-        value="10000"
-        readonly
-        onclick="calc_fast_cash10000()"
-      />
-      <input
-        type="number"
-        placeholder="Enter pin code"
-        id="inputvalue15000"
-        value="15000"
-        readonly
-        onclick="calc_fast_cash15000()"
-      />
-      <input
-        type="number"
-        placeholder="Enter pin code"
-        id="inputvalue20000"
-        value="20000"
-        readonly
-        onclick="calc_fast_cash20000()"
-      />
     </div>
   </body>
 </html>
@@ -174,6 +220,7 @@
     var btns_pelling = document.getElementById("btnspelling");
 
     var widthdraw_btn = document.getElementById("widthdrawbtn");
+    var transfer_btn = document.getElementById("transferbtn");
 
     var flexfast5000 = document.getElementById("flexfast5000");
     flexfast5000.style.display = "none";
@@ -183,6 +230,9 @@
 
     var flexwidthdraw = document.getElementById("flex-widthdraw");
     flexwidthdraw.style.display = "none";
+
+    var flextransfer = document.getElementById("flex-transfer");
+    flextransfer.style.display = "none";
 
     var btnspellingfast = document.getElementById("btnspellingfast");
     //  btnspellingfast.style.display = "none";
@@ -196,6 +246,7 @@
       showbalance.style.display = "block";
       btns_pelling.style.borderColor = "#80d894";
       btnspellingfast.style.borderColor = "gray";
+      transfer_btn.style.borderColor = "gray";
 
       widthdraw_btn.style.borderColor = "gray";
       btns_pelling.style.borderWidth = "5px";
@@ -209,8 +260,53 @@
   }
 
   function widthdraw_amount() {
+    var flextransfer = document.getElementById("flex-transfer");
+    flextransfer.style.display = "none";
+
     var show = document.getElementById("flex-widthdraw");
     var widthdraw_btn = document.getElementById("widthdrawbtn");
+    var transfer_btn = document.getElementById("transferbtn");
+
+    var lbl = document.getElementById("btnspellingfast");
+
+    var btns_pelling = document.getElementById("btnspelling");
+
+    var Balance = document.getElementById("Balance");
+    Balance.style.display = "none";
+
+    var alertbox = document.getElementById("alertbox");
+    alertbox.style.display = "none";
+
+    var flexfast5000 = document.getElementById("flexfast5000");
+    flexfast5000.style.display = "none";
+
+    var flexfast5000txt = document.getElementById("text-fastcash");
+    flexfast5000txt.style.display = "none";
+
+    if (!show.style.display || show.style.display == "none") {
+      show.style.display = "flex";
+      widthdraw_btn.style.borderColor = "#80d894";
+
+      btns_pelling.style.borderColor = "gray";
+
+      lbl.style.borderColor = "gray";
+      transfer_btn.style.borderColor = "gray";
+
+      widthdraw_btn.style.borderWidth = "5px";
+
+      widthdraw_btn.textContent = "-  Hide widthdraw";
+    } else {
+      show.style.display = "none";
+      widthdraw_btn.textContent = "+  Show widthdraw";
+    }
+  }
+
+  function transfer_amount() {
+    var show = document.getElementById("flex-transfer");
+    var transfer_btn = document.getElementById("transferbtn");
+    var widthdraw_btn = document.getElementById("widthdrawbtn");
+    var flexwidthdraw = document.getElementById("flex-widthdraw");
+    flexwidthdraw.style.display = "none";
 
     var lbl = document.getElementById("btnspellingfast");
 
@@ -232,16 +328,15 @@
       show.style.display = "flex";
       btns_pelling.style.borderColor = "gray";
       lbl.style.borderColor = "gray";
-      widthdraw_btn.style.borderColor = "#80d894";
+      transfer_btn.style.borderColor = "#80d894";
+      widthdraw_btn.style.borderColor = "gray";
 
-      // btns_pelling.style.borderWidth = "5px";
-      // lbl.style.borderWidth = "5px";
-      widthdraw_btn.style.borderWidth = "5px";
+      transfer_btn.style.borderWidth = "5px";
 
-      widthdraw_btn.textContent = "-  Hide widthdraw";
+      transfer_btn.textContent = "-  Hide Pay to";
     } else {
       show.style.display = "none";
-      widthdraw_btn.textContent = "+  Show widthdraw";
+      transfer_btn.textContent = "+  Show Pay to";
     }
   }
 
@@ -315,8 +410,13 @@
   }
 
   function show_fast_cash() {
+    var transfer_btn = document.getElementById("transferbtn");
+
     var hide = document.getElementById("flex-widthdraw");
     hide.style.display = "none";
+    var flextransfer = document.getElementById("flex-transfer");
+    flextransfer.style.display = "none";
+
     var widthdraw_btn = document.getElementById("widthdrawbtn");
     var show = document.getElementById("flexfast5000");
     var show1 = document.getElementById("text-fastcash");
@@ -341,6 +441,8 @@
       btnspelling.style.borderColor = "gray";
       widthdraw_btn.style.borderColor = "gray";
       lbl.style.borderColor = "#80d894";
+
+      transfer_btn.style.borderColor = "gray";
 
       lbl.style.borderWidth = "5px";
       // widthdraw_btn.style.borderWidth = "5px";
