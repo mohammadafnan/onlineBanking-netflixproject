@@ -2,6 +2,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
 
     <title>ATM</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/fevicon.svg" />
@@ -11,157 +15,160 @@
   <body>
     <ul id="array"></ul>
 
-    <div class="logo">
-      <h1>
-        Welcome to <br />
-        Digital Banking
-      </h1>
-    </div>
-
-    <div id="flex-cen">
-      <input
-        type="number"
-        placeholder="Enter pin code"
-        id="inputvalue"
-        maxlength="4"
-      /><br />
-      <button id="pin_btn" onclick="check_pincode()">Done</button>
-
-      <div id="alertboxpin">
-        <div class="alert">
-          <ul>
-            <li id="message"></li>
-          </ul>
-        </div>
+    <div id="mainbody" class="main-coby">
+      <div class="logo">
+        <h1>
+          Welcome to <br />
+          Digital Banking
+        </h1>
       </div>
-    </div>
-    <div class="main-h-divider">
-      <div class="h-divider">
-        <div id="flex">
-          <button
-            class="btn-check-balance"
-            id="btnspelling"
-            onclick="Check_balance()"
-          >
-            + Show Balance
-          </button>
-          <!-- <div><h2 id="Balance" class="Balanceee"></h2></div> -->
 
-          <button
-            id="transferbtn"
-            class="btn-transfer-Amount"
-            onclick="transfer_amount()"
-          >
-            + Pay to
-          </button>
+      <div id="flex-cen">
+        <input
+          type="number"
+          placeholder="Enter pin code"
+          id="inputvalue"
+          maxlength="4"
+        /><br />
+        <button id="pin_btn" onclick="check_pincode()">Done</button>
 
-          <button
-            id="widthdrawbtn"
-            class="btn-Widthraw-Amount"
-            onclick="widthdraw_amount()"
-          >
-            + Show Widthraw
-          </button>
-          <button
-            class="btn-check-balance-fast"
-            id="btnspellingfast"
-            onclick="show_fast_cash()"
-          >
-            + Show fast cash
-          </button>
-        </div>
-
-        <div id="flex-widthdraw" class="drop">
-          <input
-            type="number"
-            placeholder="Enter Widthraw Amount"
-            id="widthdrawvalue"
-          />
-          <p id="err"></p>
-
-          <br />
-          <button onclick="calc_amount()">Done</button>
-        </div>
-
-        <div id="flex-transfer" class="drop1">
-          <select name="cars" id="cars" class="select">
-            <option value="Ubl">Salect Bank</option>
-
-            <option value="Ubl">Ubl</option>
-            <option value="Hbl">Hbl</option>
-            <option value="Alfalah">Alfalah</option>
-            <option value="Mezan">Mezan</option>
-          </select>
-          <br />
-
-          <input
-            type="number"
-            placeholder="Enter Account Number"
-            id="widthdrawvalue"
-          />
-          <br />
-
-          <input
-            type="number"
-            placeholder="Enter Widthraw Amount"
-            id="widthdrawvalue"
-          />
-          <p id="err"></p>
-
-          <br />
-          <button onclick="calc_amount()">Done</button>
-        </div>
-
-        <div id="alertbox">
+        <div id="alertboxpin">
           <div class="alert">
             <ul>
-              <li id="widthdrawamounmsg"></li>
-              <li id="widthdrawamount"></li>
+              <li id="message"></li>
             </ul>
           </div>
         </div>
+      </div>
+      <div class="main-h-divider">
+        <div class="h-divider">
+          <div id="flex">
+            <button
+              class="btn-check-balance"
+              id="btnspelling"
+              onclick="Check_balance()"
+            >
+              + Show Balance
+            </button>
+            <!-- <div><h2 id="Balance" class="Balanceee"></h2></div> -->
 
-        <div>
-          <!-- <div id="text-fastcash"><h3>Select fast cash option</h3></div> -->
-
-          <div id="flexfast5000" class="drop2">
-            <div id="text-fastcash"><h3>Select fast cash option</h3></div>
-
-            <input
-              type="number"
-              placeholder="Enter pin code"
-              id="inputvalue5000"
-              value="5000"
-              readonly
-              onclick="calc_fast_cash5000()"
-            />
-            <input
-              type="number"
-              placeholder="Enter pin code"
-              id="inputvalue10000"
-              value="10000"
-              readonly
-              onclick="calc_fast_cash10000()"
-            />
-            <input
-              type="number"
-              placeholder="Enter pin code"
-              id="inputvalue15000"
-              value="15000"
-              readonly
-              onclick="calc_fast_cash15000()"
-            />
-            <input
-              type="number"
-              placeholder="Enter pin code"
-              id="inputvalue20000"
-              value="20000"
-              readonly
-              onclick="calc_fast_cash20000()"
-            />
+            <button
+              
+              id="transferbtn"
+              class="btn-transfer-Amount"
+              onclick="transfer_amount()"
+            >
+              + Pay to
+            </button>
+            <button
+              id="widthdrawbtn"
+              class="btn-Widthraw-Amount"
+              onclick="widthdraw_amount()"
+            >
+              + Show Widthraw
+            </button>
+            <button
+              class="btn-check-balance-fast"
+              id="btnspellingfast"
+              onclick="show_fast_cash()"
+            >
+              + Show fast cash
+            </button>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <div id="Balance" class="drop3 Balanceee"><h2></h2></div>
+    <div id="flex-widthdraw" class="drop">
+      <input
+        type="number"
+        placeholder="Enter Widthraw Amount"
+        id="widthdrawvalue"
+      />
+      <p id="err"></p>
+
+      <br />
+      <button onclick="calc_amount()">Done</button>
+    </div>
+
+    <div id="flex-transfer" class="drop1">
+      <select name="cars" id="cars" class="select">
+        <option value="Ubl">Salect Bank</option>
+
+        <option value="Ubl">Ubl</option>
+        <option value="Hbl">Hbl</option>
+        <option value="Alfalah">Alfalah</option>
+        <option value="Mezan">Mezan</option>
+      </select>
+      <br />
+
+      <input
+        type="number"
+        placeholder="Enter Account Number"
+        id="widthdrawvalue"
+      />
+      <br />
+
+      <input
+        type="number"
+        placeholder="Enter Widthraw Amount"
+        id="widthdrawvalue"
+      />
+      <p id="err"></p>
+
+      <br />
+      <button onclick="calc_amount()">Done</button>
+    </div>
+
+    <div>
+      <div id="flexfast5000" class="drop2">
+        <div id="text-fastcash"><h3>Select fast cash option</h3></div>
+
+        <input
+          type="number"
+          placeholder="Enter pin code"
+          id="inputvalue5000"
+          value="5000"
+          readonly
+          onclick="calc_fast_cash5000()"
+        />
+        <input
+          type="number"
+          placeholder="Enter pin code"
+          id="inputvalue10000"
+          value="10000"
+          readonly
+          onclick="calc_fast_cash10000()"
+        />
+        <input
+          type="number"
+          placeholder="Enter pin code"
+          id="inputvalue15000"
+          value="15000"
+          readonly
+          onclick="calc_fast_cash15000()"
+        />
+        <input
+          type="number"
+          placeholder="Enter pin code"
+          id="inputvalue20000"
+          value="20000"
+          readonly
+          onclick="calc_fast_cash20000()"
+        />
+      </div>
+
+      <div id="Balance" class="drop3 Balanceee"></div>
+      <div id="icon">
+        <i onclick="remove()" class="glyphicon glyphicon-remove"></i>
+      </div>
+
+      <div id="alertbox">
+        <div class="alert">
+          <ul>
+            <li id="widthdrawamounmsg"></li>
+            <li id="widthdrawamount"></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -172,21 +179,25 @@
   let user_pincode = 1234;
   let balance = 200000;
 
-  var value_put = document.getElementById("inputvalue");
+  function remove() {
+    var showbalance = document.getElementById("Balance");
+    var iconbtn = document.getElementById("icon");
+    var mainbody = document.getElementById("mainbody");
 
-  var pin_btnn = document.getElementById("pin_btn");
+    var btnspelling = document.getElementById("btnspelling");
+    var transferbtn = document.getElementById("transferbtn");
+    var widthdrawbtn = document.getElementById("widthdrawbtn");
+    var btnspellingfast = document.getElementById("btnspellingfast");
 
-  value_put.addEventListener("inputvalue", function () {
-    pin_btnn.disabled = this.value === "";
-  });
+    btnspelling.disabled = false;
+    transferbtn.disabled = false;
+    widthdrawbtn.disabled = false;
+    btnspellingfast.disabled = false;
 
-  // function Onlynumber(event) {
-
-  //   const Regexpattern = /[0-9]/;
-  //   const result = Regexpattern.test(user_pincode_put);
-  //   return result;
-  //       alert(result);
-  // }
+    mainbody.style.filter = "blur(0px)";
+    showbalance.style.display = "none";
+    iconbtn.style.display = "none";
+  }
 
   function check_pincode() {
     var hideform = document.getElementById("flex-cen");
@@ -215,7 +226,24 @@
   }
 
   function Check_balance() {
+    var mainbody = document.getElementById("mainbody");
+    var alertbox = document.getElementById("alertbox");
+    var btnspelling = document.getElementById("btnspelling");
+    var transferbtn = document.getElementById("transferbtn");
+    var widthdrawbtn = document.getElementById("widthdrawbtn");
+    var btnspellingfast = document.getElementById("btnspellingfast");
+    var flex = document.getElementById("flex");
+    alertbox.style.display = "none";
+
+    mainbody.style.filter = "blur(5px)";
+    btnspelling.disabled = true;
+    transferbtn.disabled = true;
+    widthdrawbtn.disabled = true;
+    btnspellingfast.disabled = true;
+
     var showbalance = document.getElementById("Balance");
+
+    var iconbtn = document.getElementById("icon");
 
     var btns_pelling = document.getElementById("btnspelling");
 
@@ -244,17 +272,26 @@
 
     if (!showbalance.style.display || showbalance.style.display == "none") {
       showbalance.style.display = "block";
+      iconbtn.style.display = "block";
+      iconbtn.style.color = "red";
+      iconbtn.style.position = "absolute";
+      iconbtn.style.right = "20px";
+      iconbtn.style.bottom = "55px";
+
+      iconbtn.style.right = "20px";
+
       btns_pelling.style.borderColor = "#80d894";
       btnspellingfast.style.borderColor = "gray";
       transfer_btn.style.borderColor = "gray";
 
       widthdraw_btn.style.borderColor = "gray";
       btns_pelling.style.borderWidth = "5px";
-      // widthdraw_btn.style.borderWidth = "5px";
 
       btns_pelling.textContent = "-  Hide Balance";
     } else {
       showbalance.style.display = "none";
+      iconbtn.style.display = "none";
+
       btns_pelling.textContent = "+  Show Balance";
     }
   }
