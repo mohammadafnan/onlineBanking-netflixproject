@@ -50,10 +50,8 @@
             >
               + Show Balance
             </button>
-            <!-- <div><h2 id="Balance" class="Balanceee"></h2></div> -->
 
             <button
-              
               id="transferbtn"
               class="btn-transfer-Amount"
               onclick="transfer_amount()"
@@ -89,6 +87,9 @@
 
       <br />
       <button onclick="calc_amount()">Done</button>
+      <div id="iconwidthdraw">
+        <i onclick="remove()" class="glyphicon glyphicon-remove"></i>
+      </div>
     </div>
 
     <div id="flex-transfer" class="drop1">
@@ -118,6 +119,9 @@
 
       <br />
       <button onclick="calc_amount()">Done</button>
+      <div id="icontransfer">
+        <i onclick="remove()" class="glyphicon glyphicon-remove"></i>
+      </div>
     </div>
 
     <div>
@@ -156,6 +160,10 @@
           readonly
           onclick="calc_fast_cash20000()"
         />
+
+        <div id="iconfastcash">
+          <i onclick="remove()" class="glyphicon glyphicon-remove"></i>
+        </div>
       </div>
 
       <div id="Balance" class="drop3 Balanceee"></div>
@@ -189,6 +197,10 @@
     var widthdrawbtn = document.getElementById("widthdrawbtn");
     var btnspellingfast = document.getElementById("btnspellingfast");
 
+    var flextransfer = document.getElementById("flex-transfer");
+    var flexwidthdraw = document.getElementById("flex-widthdraw");
+    var flexfast5000 = document.getElementById("flexfast5000");
+
     btnspelling.disabled = false;
     transferbtn.disabled = false;
     widthdrawbtn.disabled = false;
@@ -197,6 +209,9 @@
     mainbody.style.filter = "blur(0px)";
     showbalance.style.display = "none";
     iconbtn.style.display = "none";
+    flextransfer.style.display = "none";
+    flexwidthdraw.style.display = "none";
+    flexfast5000.style.display = "none";
   }
 
   function check_pincode() {
@@ -297,6 +312,20 @@
   }
 
   function widthdraw_amount() {
+    var mainbody = document.getElementById("mainbody");
+
+    var btnspelling = document.getElementById("btnspelling");
+    var transferbtn = document.getElementById("transferbtn");
+    var widthdrawbtn = document.getElementById("widthdrawbtn");
+    var btnspellingfast = document.getElementById("btnspellingfast");
+    var iconwidthdraw = document.getElementById("iconwidthdraw");
+
+    mainbody.style.filter = "blur(5px)";
+    btnspelling.disabled = true;
+    transferbtn.disabled = true;
+    widthdrawbtn.disabled = true;
+    btnspellingfast.disabled = true;
+
     var flextransfer = document.getElementById("flex-transfer");
     flextransfer.style.display = "none";
 
@@ -321,6 +350,12 @@
     flexfast5000txt.style.display = "none";
 
     if (!show.style.display || show.style.display == "none") {
+      icontransfer.style.display = "block";
+      iconwidthdraw.style.color = "red";
+      iconwidthdraw.style.position = "absolute";
+      iconwidthdraw.style.right = "20px";
+      iconwidthdraw.style.bottom = "200px";
+
       show.style.display = "flex";
       widthdraw_btn.style.borderColor = "#80d894";
 
@@ -339,10 +374,25 @@
   }
 
   function transfer_amount() {
+    var mainbody = document.getElementById("mainbody");
+
+    var btnspelling = document.getElementById("btnspelling");
+    var transferbtn = document.getElementById("transferbtn");
+    var widthdrawbtn = document.getElementById("widthdrawbtn");
+    var btnspellingfast = document.getElementById("btnspellingfast");
+
+    mainbody.style.filter = "blur(5px)";
+    btnspelling.disabled = true;
+    transferbtn.disabled = true;
+    widthdrawbtn.disabled = true;
+    btnspellingfast.disabled = true;
+
     var show = document.getElementById("flex-transfer");
     var transfer_btn = document.getElementById("transferbtn");
     var widthdraw_btn = document.getElementById("widthdrawbtn");
     var flexwidthdraw = document.getElementById("flex-widthdraw");
+    var icontransfer = document.getElementById("icontransfer");
+
     flexwidthdraw.style.display = "none";
 
     var lbl = document.getElementById("btnspellingfast");
@@ -362,14 +412,17 @@
     flexfast5000txt.style.display = "none";
 
     if (!show.style.display || show.style.display == "none") {
+      icontransfer.style.display = "block";
+      icontransfer.style.color = "red";
+      icontransfer.style.position = "absolute";
+      icontransfer.style.right = "20px";
+      icontransfer.style.bottom = "280px";
       show.style.display = "flex";
       btns_pelling.style.borderColor = "gray";
       lbl.style.borderColor = "gray";
       transfer_btn.style.borderColor = "#80d894";
       widthdraw_btn.style.borderColor = "gray";
-
       transfer_btn.style.borderWidth = "5px";
-
       transfer_btn.textContent = "-  Hide Pay to";
     } else {
       show.style.display = "none";
@@ -378,6 +431,20 @@
   }
 
   function calc_amount() {
+    var mainbody = document.getElementById("mainbody");
+    mainbody.style.filter = "blur(5px)";
+
+    var btnspelling = document.getElementById("btnspelling");
+    var transferbtn = document.getElementById("transferbtn");
+    var widthdrawbtn = document.getElementById("widthdrawbtn");
+    var btnspellingfast = document.getElementById("btnspellingfast");
+    var iconwidthdraw = document.getElementById("iconwidthdraw");
+
+    btnspelling.disabled = false;
+    transferbtn.disabled = false;
+    widthdrawbtn.disabled = false;
+    btnspellingfast.disabled = false;
+
     var widthdraw_value = document.getElementById("widthdrawvalue");
     var show = document.getElementById("flex-widthdraw");
 
@@ -392,6 +459,7 @@
       err_input.style.display = "flex";
       err_input.textContent = "Please enter Amount";
       err_input.style.color = "#e77066";
+      mainbody.style.filter = "blur(5px)";
     } else {
       err_input.style.display = "";
 
@@ -405,13 +473,17 @@
 
       show.style.display = "none";
       widthdraw_value.value = "";
+      mainbody.style.filter = "blur(0px)";
     } else if (widthdraw_value.value < 0) {
       lbl.textContent = "Negative value not allowed";
       lbl.style.color = "#e77066";
       transaction_msg.style.display = "none";
       show.style.display = "none";
       widthdraw_value.value = "";
+      mainbody.style.filter = "blur(0px)";
     } else {
+      mainbody.style.filter = "blur(5px)";
+
       balance = balance - widthdraw_value.value;
       lbl.style.color = "#80d894";
 
@@ -438,6 +510,7 @@
         transaction_msg.style.color = "orange";
         lbl.textContent = "Remaining Balance" + " " + "Rs" + " " + showbal;
         show.style.display = "none";
+        mainbody.style.filter = "blur(0px)";
       } else {
         lbl.textContent = "";
       }
@@ -447,6 +520,20 @@
   }
 
   function show_fast_cash() {
+    var mainbody = document.getElementById("mainbody");
+
+    var btnspelling = document.getElementById("btnspelling");
+    var transferbtn = document.getElementById("transferbtn");
+    var widthdrawbtn = document.getElementById("widthdrawbtn");
+    var btnspellingfast = document.getElementById("btnspellingfast");
+    var iconfastcash = document.getElementById("iconfastcash");
+
+    mainbody.style.filter = "blur(5px)";
+    btnspelling.disabled = true;
+    transferbtn.disabled = true;
+    widthdrawbtn.disabled = true;
+    btnspellingfast.disabled = true;
+
     var transfer_btn = document.getElementById("transferbtn");
 
     var hide = document.getElementById("flex-widthdraw");
@@ -471,6 +558,12 @@
       !show1.style.display ||
       show1.style.display == "none"
     ) {
+      iconfastcash.style.display = "block";
+      iconfastcash.style.color = "red";
+      iconfastcash.style.position = "absolute";
+      iconfastcash.style.right = "20px";
+      iconfastcash.style.bottom = "280px";
+
       show.style.display = "flex";
       show1.style.display = "block";
       lbl1.style.display == "flex";
@@ -495,6 +588,19 @@
   }
 
   function calc_fast_cash5000() {
+    var mainbody = document.getElementById("mainbody");
+    mainbody.style.filter = "blur(5px)";
+
+    var btnspelling = document.getElementById("btnspelling");
+    var transferbtn = document.getElementById("transferbtn");
+    var widthdrawbtn = document.getElementById("widthdrawbtn");
+    var btnspellingfast = document.getElementById("btnspellingfast");
+
+    btnspelling.disabled = false;
+    transferbtn.disabled = false;
+    widthdrawbtn.disabled = false;
+    btnspellingfast.disabled = false;
+
     var cash5000 = document.getElementById("inputvalue5000");
     var show = document.getElementById("flexfast5000");
     var text = document.getElementById("text-fastcash");
@@ -511,6 +617,7 @@
       transaction_msg.style.display = "none";
       show.style.display = "none";
       text.style.display = "none";
+      mainbody.style.filter = "blur(0px)";
     } else {
       transaction_msg.style.display = "list-item";
       show.style.display = "flex";
@@ -538,10 +645,27 @@
       transaction_msg.style.color = "orange";
       show.style.display = "none";
       text.style.display = "none";
+      mainbody.style.filter = "blur(0px)";
     }
   }
 
   function calc_fast_cash10000() {
+
+
+    var mainbody = document.getElementById("mainbody");
+    mainbody.style.filter = "blur(5px)";
+
+    var btnspelling = document.getElementById("btnspelling");
+    var transferbtn = document.getElementById("transferbtn");
+    var widthdrawbtn = document.getElementById("widthdrawbtn");
+    var btnspellingfast = document.getElementById("btnspellingfast");
+
+    btnspelling.disabled = false;
+    transferbtn.disabled = false;
+    widthdrawbtn.disabled = false;
+    btnspellingfast.disabled = false;
+
+
     var cash10000 = document.getElementById("inputvalue10000");
 
     var lbl = document.getElementById("widthdrawamount");
@@ -558,6 +682,8 @@
       transaction_msg.style.display = "none";
       show.style.display = "none";
       text.style.display = "none";
+      mainbody.style.filter = "blur(0px)";
+
     } else {
       show.style.display = "flex";
       text.style.display = "flex";
@@ -586,10 +712,28 @@
       transaction_msg.style.color = "orange";
       show.style.display = "none";
       text.style.display = "none";
+      mainbody.style.filter = "blur(0px)";
+
     }
   }
 
   function calc_fast_cash15000() {
+
+    var mainbody = document.getElementById("mainbody");
+    mainbody.style.filter = "blur(5px)";
+
+    var btnspelling = document.getElementById("btnspelling");
+    var transferbtn = document.getElementById("transferbtn");
+    var widthdrawbtn = document.getElementById("widthdrawbtn");
+    var btnspellingfast = document.getElementById("btnspellingfast");
+
+    btnspelling.disabled = false;
+    transferbtn.disabled = false;
+    widthdrawbtn.disabled = false;
+    btnspellingfast.disabled = false;
+
+
+
     var cash15000 = document.getElementById("inputvalue15000");
     var show = document.getElementById("flexfast5000");
     var text = document.getElementById("text-fastcash");
@@ -605,6 +749,7 @@
       transaction_msg.style.display = "none";
       show.style.display = "none";
       text.style.display = "none";
+      mainbody.style.filter = "blur(0px)";
     } else {
       show.style.display = "flex";
       text.style.display = "flex";
@@ -632,10 +777,28 @@
       transaction_msg.style.color = "orange";
       show.style.display = "none";
       text.style.display = "none";
+      mainbody.style.filter = "blur(0px)";
+
     }
   }
 
   function calc_fast_cash20000() {
+
+
+    var mainbody = document.getElementById("mainbody");
+    mainbody.style.filter = "blur(5px)";
+
+    var btnspelling = document.getElementById("btnspelling");
+    var transferbtn = document.getElementById("transferbtn");
+    var widthdrawbtn = document.getElementById("widthdrawbtn");
+    var btnspellingfast = document.getElementById("btnspellingfast");
+
+    btnspelling.disabled = false;
+    transferbtn.disabled = false;
+    widthdrawbtn.disabled = false;
+    btnspellingfast.disabled = false;
+
+
     var cash20000 = document.getElementById("inputvalue20000");
     var lbl = document.getElementById("widthdrawamount");
     var show = document.getElementById("flexfast5000");
@@ -653,6 +816,8 @@
       transaction_msg.style.display = "none";
       show.style.display = "none";
       text.style.display = "none";
+      mainbody.style.filter = "blur(0px)";
+
     } else {
       balance = balance - cashvalue4;
       lbl.style.color = "#80d894";
@@ -680,6 +845,8 @@
       transaction_msg.style.color = "orange";
       show.style.display = "none";
       text.style.display = "none";
+      mainbody.style.filter = "blur(0px)";
+
     }
   }
 

@@ -271,16 +271,16 @@ li {
 
 .drop1 {
   background-color: #121212;
-  // position: absolute;
+  position: absolute;
   bottom: 0;
   width: 100%;
   left: 0;
-  // height: 50%;
+  height: 50%;
   overflow-x: hidden;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
-  position: relative;
-  animation: myfirst2 0.3s;
+  // position: relative;
+  // animation: myfirst2 0.3s;
 }
 @keyframes myfirst2 {
   0% {
@@ -305,7 +305,7 @@ li {
 
 .drop3 {
   background-color: #121212;
-  // position: absolute;
+  position: absolute;
   bottom: 0;
   width: 100%;
   left: 0;
@@ -314,8 +314,8 @@ li {
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   padding-bottom: 20px;
-  position: relative;
-  animation: myfirst 0.3s;
+  // position: relative;
+  // animation: myfirst 0.3s;
 }
 
 @keyframes myfirst {
@@ -331,3 +331,13 @@ li {
   display: none;
   cursor: pointer;
 }
+
+// #icontransfer {
+//   display: none;
+//   cursor: pointer;
+// }
+
+// #iconwidthdraw {
+//   display: none;
+//   cursor: pointer;
+// }
