@@ -93,9 +93,8 @@
     </div>
 
     <div id="flex-transfer" class="drop1">
-      <select name="cars" id="banklist" class="select">
-        <option value="Ubl">Salect Bank</option>
-
+      <select name="cars" id="banklist" class="select" onchange="selectvalue()">
+        <option  selected>Select Bank</option>
         <option value="Ubl">Ubl</option>
         <option value="Hbl">Hbl</option>
         <option value="Alfalah">Alfalah</option>
@@ -104,11 +103,12 @@
       <p id="errbanklist"></p>
 
       <br />
-
+      <!-- (keyup)="search($event.target.value)" -->
       <input
         type="number"
         placeholder="Enter Account Number"
         id="transferacctvalue"
+        keyup="checkacc($event.target.value)"
       />
       <p id="errtransferacct"></p>
 
@@ -186,5 +186,3 @@
     </div>
   </body>
 </html>
-
-
