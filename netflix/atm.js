@@ -435,7 +435,7 @@ function calc_amount_transfer() {
       showtransfer.style.display = "flex";
 
       transaction_msg.textContent =
-        "Successfully Tranfer to  " +
+        "Successfully Tranfer to  " + `${banklist.value}`+ " " +"Bank" +
         " " +
         "Rs" +
         " " +
