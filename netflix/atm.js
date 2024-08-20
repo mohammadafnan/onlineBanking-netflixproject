@@ -369,9 +369,9 @@ function calc_amount_transfer() {
   // alert("awo");
   if (
     transfervalue.value == "" ||
-    err_input.style.display == "none" ||
-    banklist.value == "" ||
-    transferacctvalue.value == ""
+    (err_input.style.display == "none" &&
+      banklist.value == "" &&
+      transferacctvalue.value == "")
   ) {
     alertbox.style.display = "none";
     err_input.style.display = "flex";
@@ -395,12 +395,10 @@ function calc_amount_transfer() {
   //   errtransferacct.style.display = "none";
   // }
 
-  if (transferacctvalue.value == "" || transferacctvalue.value != bankAcct) {
-    errtransferacct.textContent = " Acct no is not correct ";
-    errtransferacct.style.color = "#e77066";
-  } else {
-    errtransferacct.style.display = "none";
-  }
+  // if (transferacctvalue.value == "" || transferacctvalue.value != bankAcct) {
+  //   errtransferacct.textContent = " Acct no is not correct ";
+  //   errtransferacct.style.color = "#e77066";
+  // }
 
   if (balance < transfervalue.value) {
     lbl.textContent = "Insuffient Balance";
