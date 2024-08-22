@@ -55,7 +55,7 @@ function check_pincode() {
       show.style.display = "flex";
       hideform.style.display = "none";
       mainbody.style.filter = "blur(0px)";
-    }, 1000);
+    }, 100000000000);
   } else {
     alertboxpinn.style.display = "flex";
 
