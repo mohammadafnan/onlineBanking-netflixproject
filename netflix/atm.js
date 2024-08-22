@@ -366,12 +366,10 @@ function calc_amount_transfer() {
   var err_input = document.getElementById("errtransfer");
   var errtransferacct = document.getElementById("errtransferacct");
 
-  // alert("awo");
   if (
     transfervalue.value == "" ||
-    (err_input.style.display == "none" &&
-      banklist.value == "" &&
-      transferacctvalue.value == "")
+    banklist.value == "" ||
+    transferacctvalue.value == ""
   ) {
     alertbox.style.display = "none";
     err_input.style.display = "flex";
@@ -384,8 +382,11 @@ function calc_amount_transfer() {
     mainbody.style.filter = "blur(5px)";
   } else {
     err_input.style.display = "";
-
     err_input.textContent = "";
+    errbanklist.style.display = "";
+    errbanklist.textContent = "";
+    errtransferacct.style.display = "";
+    errtransferacct.textContent = "";
   }
 
   // if ( banklist.value != bank) {
@@ -400,42 +401,68 @@ function calc_amount_transfer() {
   //   errtransferacct.style.color = "#e77066";
   // }
 
-  if (balance < transfervalue.value) {
+  if (
+    balance < transfervalue.value &&
+    banklist.value != "" &&
+    transferacctvalue.value != ""
+  ) {
     lbl.textContent = "Insuffient Balance";
     lbl.style.color = "#e77066";
     transaction_msg.style.display = "none";
-
     showtransfer.style.display = "none";
     transfervalue.value = "";
+    transferacctvalue.value = "";
+    banklist.value = "Select Bank";
+
     mainbody.style.filter = "blur(0px)";
-  } else if (transfervalue.value < 0) {
+  } else if (
+    transfervalue.value < 0 &&
+    banklist.value != "" &&
+    transferacctvalue.value != ""
+  ) {
     lbl.textContent = "Negative value not allowed";
     lbl.style.color = "#e77066";
     transaction_msg.style.display = "none";
     showtransfer.style.display = "none";
     transfervalue.value = "";
+    transferacctvalue.value = "";
+    banklist.value = "Select Bank";
+
     mainbody.style.filter = "blur(0px)";
   } else {
     mainbody.style.filter = "blur(5px)";
 
-    balance = balance - transfervalue.value;
-    lbl.style.color = "#80d894";
+    if (
+      transfervalue.value != "" &&
+      banklist.value != "" &&
+      transferacctvalue.value != ""
+    ) {
+      balance = balance - transfervalue.value;
+      lbl.style.color = "#80d894";
 
-    var formated_transaction_msg = transfervalue.value
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      var formated_transaction_msg = transfervalue.value
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-    var formated_showbalance = balance
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    showbal = formated_showbalance;
+      var formated_showbalance = balance
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      showbal = formated_showbalance;
+    }
 
-    if (transfervalue.value != "") {
+    if (
+      transfervalue.value != "" &&
+      banklist.value != "" &&
+      transferacctvalue.value != ""
+    ) {
       transaction_msg.style.display = "list-item";
       showtransfer.style.display = "flex";
 
       transaction_msg.textContent =
-        "Successfully Tranfer to  " + `${banklist.value}`+ " " +"Bank" +
+        "Successfully Tranfer to  " +
+        `${banklist.value}` +
+        " " +
+        "Bank" +
         " " +
         "Rs" +
         " " +
@@ -445,35 +472,34 @@ function calc_amount_transfer() {
       lbl.textContent = "Remaining Balance" + " " + "Rs" + " " + showbal;
       showtransfer.style.display = "none";
       mainbody.style.filter = "blur(0px)";
+      transfervalue.value = "";
+      transferacctvalue.value = "";
+      banklist.value = "Select Bank";
     } else {
       lbl.textContent = "";
     }
-
-    transfervalue.value = "";
-    transferacctvalue.value = "";
-    // banklist.value = "";
   }
 }
 
-function selectvalue() {
-  var errbanklist = document.getElementById("errbanklist");
-  if (banklist.value == "SelectBank") {
-    errbanklist.textContent = " Please Select Bank ";
-    errbanklist.style.color = "#e77066";
-  }
-  errbanklist.style.display = "none";
-}
+// function selectvalue() {
+//   var errbanklist = document.getElementById("errbanklist");
+//   if (banklist.value == "SelectBank") {
+//     errbanklist.textContent = " Please Select Bank ";
+//     errbanklist.style.color = "#e77066";
+//   }
+//   errbanklist.style.display = "none";
+// }
 
-function checkacc() {
-  var transferacctvalue = document.getElementById("transferacctvalue");
-  var errtransferacct = document.getElementById("errtransferacct");
+// function checkacc() {
+//   var transferacctvalue = document.getElementById("transferacctvalue");
+//   var errtransferacct = document.getElementById("errtransferacct");
 
-  if (transferacctvalue.value != bankAcct) {
-    errtransferacct.textContent = " Acct no is not correct ";
-    errtransferacct.style.color = "#e77066";
-  }
-  errtransferacct.style.display = "none";
-}
+//   if (transferacctvalue.value != bankAcct) {
+//     errtransferacct.textContent = " Acct no is not correct ";
+//     errtransferacct.style.color = "#e77066";
+//   }
+//   errtransferacct.style.display = "none";
+// }
 
 function show_fast_cash() {
   var mainbody = document.getElementById("mainbody");
