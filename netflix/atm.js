@@ -31,6 +31,8 @@ function remove() {
 }
 
 function check_pincode() {
+  var loaderpage = document.getElementById("loaderpage");
+
   var hideform = document.getElementById("flex-cen");
 
   var user_pincode_put = document.getElementById("inputvalue");
@@ -45,14 +47,21 @@ function check_pincode() {
   if (user_pincode == newinputValue) {
     messageElement.textContent = "Pin code is correct";
     messageElement.style.color = "#80d894";
-    show.style.display = "flex";
-    hideform.style.display = "none";
+    loaderpage.style.display = "flex";
+    mainbody.style.filter = "blur(5px)";
+
+    setTimeout(function () {
+      loaderpage.style.display = "none";
+      show.style.display = "flex";
+      hideform.style.display = "none";
+      mainbody.style.filter = "blur(0px)";
+    }, 1000);
   } else {
     alertboxpinn.style.display = "flex";
 
     messageElement.style.color = "#e77066";
     messageElement.textContent = "Pin code is not correct";
-    // messageElement.innerHTML = '<span class="danger">Pin code is not correct</span>'
+    user_pincode_put.value = "";
   }
 }
 
@@ -71,6 +80,16 @@ function Check_balance() {
   transferbtn.disabled = true;
   widthdrawbtn.disabled = true;
   btnspellingfast.disabled = true;
+
+  loaderpage.style.display = "flex";
+
+  setTimeout(function () {
+    showbalance.style.display = "block";
+    iconbtn.style.display = "block";
+
+    loaderpage.style.display = "none";
+
+  }, 1000);
 
   var showbalance = document.getElementById("Balance");
 
@@ -102,8 +121,8 @@ function Check_balance() {
   showbalance.textContent = "Rs" + " " + formated_showbalance;
 
   if (!showbalance.style.display || showbalance.style.display == "none") {
-    showbalance.style.display = "block";
-    iconbtn.style.display = "block";
+    // showbalance.style.display = "block";
+    // iconbtn.style.display = "block";
     iconbtn.style.color = "red";
     iconbtn.style.position = "absolute";
     iconbtn.style.right = "20px";
@@ -232,7 +251,7 @@ function transfer_amount() {
     icontransfer.style.color = "red";
     icontransfer.style.position = "absolute";
     icontransfer.style.right = "20px";
-    icontransfer.style.bottom = "280px";
+    icontransfer.style.bottom = "400px";
     show.style.display = "flex";
     btns_pelling.style.borderColor = "gray";
     lbl.style.borderColor = "gray";
