@@ -62,7 +62,18 @@ button {
   border-color: gray;
   font-size: 25px;
   cursor: pointer;
-  //   margin-top: 3%;
+}
+
+.logoutbtn {
+  width: 200px;
+  height: 60px;
+  background-color: transparent;
+  border-radius: 60px;
+  color: #80d894;
+  border-color: gray;
+  font-size: 16px;
+  cursor: pointer;
+    margin-top: 2%;
 }
 
 #flex {
@@ -193,6 +204,7 @@ button {
   border-color: gray;
   margin-top: 2%;
 }
+
 .Balanceee {
   text-align: center;
   font-size: 42px;
@@ -387,7 +399,7 @@ li {
 .lodertext {
   position: absolute;
   top: 10px;
-  transform: translate(35px, 0px);
+  transform: translate(80px, 0px);
 }
 
 #loaderpage {
@@ -400,6 +412,7 @@ li {
   // justify-content: center;
   display: none;
   position: relative;
+  // bottom: 0;
 }
 
 .loader-container {
@@ -410,9 +423,9 @@ li {
 }
 
 .progress-bar {
-  width: 80%;
-  max-width: 100px;
-  height: 10px;
+  width: 100%;
+  max-width: 200px;
+  height: 1px;
   background-color: #494949;
   border-radius: 10px;
   overflow: hidden;
