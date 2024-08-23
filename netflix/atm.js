@@ -31,7 +31,6 @@ function remove() {
 }
 
 function check_pincode() {
-
   var show = document.getElementById("flex");
 
   var loaderpage = document.getElementById("loaderpage");
@@ -44,7 +43,6 @@ function check_pincode() {
   var alertboxpinn = document.getElementById("alertboxpin");
 
   var messageElement = document.getElementById("message");
-
 
   if (newinputValue == "") {
     alertboxpinn.style.display = "flex";
@@ -70,7 +68,6 @@ function check_pincode() {
 
       mainbody.style.filter = "blur(0px)";
       show.style.display = "flex";
-
     }, 3500);
   }
 }
@@ -146,7 +143,7 @@ function Check_balance() {
     widthdraw_btn.style.borderColor = "gray";
     btns_pelling.style.borderWidth = "5px";
 
-    btns_pelling.textContent = "-  Hide Balance";
+    btns_pelling.textContent = "+ Show Balance";
   } else {
     showbalance.style.display = "none";
     iconbtn.style.display = "none";
@@ -210,7 +207,7 @@ function widthdraw_amount() {
 
     widthdraw_btn.style.borderWidth = "5px";
 
-    widthdraw_btn.textContent = "-  Hide widthdraw";
+    widthdraw_btn.textContent = "+  Show widthdraw";
   } else {
     show.style.display = "none";
     widthdraw_btn.textContent = "+  Show widthdraw";
@@ -267,7 +264,7 @@ function transfer_amount() {
     transfer_btn.style.borderColor = "#80d894";
     widthdraw_btn.style.borderColor = "gray";
     transfer_btn.style.borderWidth = "5px";
-    transfer_btn.textContent = "-  Hide Pay to";
+    transfer_btn.textContent = "+  Show Pay to";
   } else {
     show.style.display = "none";
     transfer_btn.textContent = "+  Show Pay to";
@@ -520,11 +517,11 @@ function calc_amount_transfer() {
 }
 
 function logout() {
-
   var flex = document.getElementById("flex");
   var flexcen = document.getElementById("flex-cen");
+  var alertbox = document.getElementById("alertbox");
 
-
+  alertbox.style.display = "none";
   flex.style.display = "none";
   flexcen.style.display = "flex";
 
@@ -589,7 +586,7 @@ function show_fast_cash() {
     lbl.style.borderWidth = "5px";
     // widthdraw_btn.style.borderWidth = "5px";
 
-    lbl.textContent = " - Hide fast cash";
+    lbl.textContent = " + Show fast cash";
   } else {
     show.style.display = "none";
     show1.style.display = "none";
