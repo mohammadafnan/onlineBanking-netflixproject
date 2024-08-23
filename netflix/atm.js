@@ -44,9 +44,24 @@ function check_pincode() {
 
   var show = document.getElementById("flex");
 
-  if (user_pincode == newinputValue) {
+  if (newinputValue == "") {
+    alertboxpinn.style.display = "flex";
+    messageElement.style.color = "#e77066";
+    messageElement.textContent = "Enter Pin Code";
+    user_pincode_put.value = "";
+
+
+  } else if (user_pincode != newinputValue) {
+    messageElement.textContent = "Pin code is not correct";
+    alertboxpinn.style.display = "flex";
+    messageElement.style.color = "#e77066";
+    user_pincode_put.value = "";
+    
+  } else {
     messageElement.textContent = "Pin code is correct";
     messageElement.style.color = "#80d894";
+    alertboxpinn.style.display = "none";
+
     loaderpage.style.display = "block";
     mainbody.style.filter = "blur(5px)";
 
@@ -56,12 +71,6 @@ function check_pincode() {
       hideform.style.display = "none";
       mainbody.style.filter = "blur(0px)";
     }, 3500);
-  } else {
-    alertboxpinn.style.display = "flex";
-
-    messageElement.style.color = "#e77066";
-    messageElement.textContent = "Pin code is not correct";
-    user_pincode_put.value = "";
   }
 }
 
