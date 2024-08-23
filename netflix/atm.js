@@ -47,7 +47,7 @@ function check_pincode() {
   if (user_pincode == newinputValue) {
     messageElement.textContent = "Pin code is correct";
     messageElement.style.color = "#80d894";
-    loaderpage.style.display = "flex";
+    loaderpage.style.display = "block";
     mainbody.style.filter = "blur(5px)";
 
     setTimeout(function () {
@@ -55,7 +55,7 @@ function check_pincode() {
       show.style.display = "flex";
       hideform.style.display = "none";
       mainbody.style.filter = "blur(0px)";
-    }, 100000000000);
+    }, 3500);
   } else {
     alertboxpinn.style.display = "flex";
 
@@ -81,15 +81,14 @@ function Check_balance() {
   widthdrawbtn.disabled = true;
   btnspellingfast.disabled = true;
 
-  loaderpage.style.display = "flex";
+  loaderpage.style.display = "block";
 
   setTimeout(function () {
     showbalance.style.display = "block";
     iconbtn.style.display = "block";
 
     loaderpage.style.display = "none";
-
-  }, 1000);
+  }, 3500);
 
   var showbalance = document.getElementById("Balance");
 
