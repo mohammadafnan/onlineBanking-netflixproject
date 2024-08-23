@@ -31,19 +31,8 @@ function remove() {
 }
 
 function check_pincode() {
-  // var btnspelling = document.getElementById("btnspelling");
-  // var transferbtn = document.getElementById("transferbtn");
-  // var widthdrawbtn = document.getElementById("widthdrawbtn");
-  // var btnspellingfast = document.getElementById("btnspellingfast");
-  // var iconfastcash = document.getElementById("iconfastcash");
-  // var iconfastcash = document.getElementById("btnlogout");
 
-  // btnspelling.style.display = "flex";
-  // transferbtn.style.display = "flex";
-  // widthdrawbtn.style.display = "flex";
-  // btnspellingfast.style.display = "flex";
-  // iconfastcash.style.display = "flex";
-  // iconfastcash.style.display = "flex";
+  var show = document.getElementById("flex");
 
   var loaderpage = document.getElementById("loaderpage");
 
@@ -56,7 +45,6 @@ function check_pincode() {
 
   var messageElement = document.getElementById("message");
 
-  var show = document.getElementById("flex");
 
   if (newinputValue == "") {
     alertboxpinn.style.display = "flex";
@@ -78,9 +66,11 @@ function check_pincode() {
 
     setTimeout(function () {
       loaderpage.style.display = "none";
-      show.style.display = "flex";
       hideform.style.display = "none";
+
       mainbody.style.filter = "blur(0px)";
+      show.style.display = "flex";
+
     }, 3500);
   }
 }
@@ -324,7 +314,7 @@ function calc_amount() {
     lbl.textContent = "Insuffient Balance";
     lbl.style.color = "#e77066";
     transaction_msg.style.display = "none";
-  alertbox.style.display = "flex";
+    alertbox.style.display = "flex";
 
     show.style.display = "none";
     widthdraw_value.value = "";
@@ -337,7 +327,6 @@ function calc_amount() {
     widthdraw_value.value = "";
     mainbody.style.filter = "blur(0px)";
     alertbox.style.display = "flex";
-
   } else {
     mainbody.style.filter = "blur(5px)";
 
@@ -439,8 +428,6 @@ function calc_amount_transfer() {
     errtransferacct.textContent = "";
   }
 
-
-
   if (
     balance < transfervalue.value &&
     banklist.value != "" &&
@@ -454,7 +441,6 @@ function calc_amount_transfer() {
     transferacctvalue.value = "";
     banklist.value = "Select Bank";
     alertbox.style.display = "flex";
-
 
     mainbody.style.filter = "blur(0px)";
   } else if (
@@ -470,7 +456,6 @@ function calc_amount_transfer() {
     transferacctvalue.value = "";
     banklist.value = "Select Bank";
     alertbox.style.display = "flex";
-
 
     mainbody.style.filter = "blur(0px)";
   } else {
@@ -511,8 +496,6 @@ function calc_amount_transfer() {
         mainbody.style.filter = "blur(0px)";
       }, 3500);
 
-
-
       transaction_msg.textContent =
         "Successfully Tranfer to  " +
         `${banklist.value}` +
@@ -537,24 +520,13 @@ function calc_amount_transfer() {
 }
 
 function logout() {
+
+  var flex = document.getElementById("flex");
   var flexcen = document.getElementById("flex-cen");
-  var inputvalue = document.getElementById("inputvalue");
 
-  var btnspelling = document.getElementById("btnspelling");
-  var transferbtn = document.getElementById("transferbtn");
-  var widthdrawbtn = document.getElementById("widthdrawbtn");
-  var btnspellingfast = document.getElementById("btnspellingfast");
-  var iconfastcash = document.getElementById("iconfastcash");
-  var iconfastcash = document.getElementById("btnlogout");
 
-  btnspelling.style.display = "none";
-  transferbtn.style.display = "none";
-  widthdrawbtn.style.display = "none";
-  btnspellingfast.style.display = "none";
-  iconfastcash.style.display = "none";
-  iconfastcash.style.display = "none";
+  flex.style.display = "none";
   flexcen.style.display = "flex";
-  flexcen.style.overflow = "none";
 
   inputvalue.value = "";
 }
@@ -659,7 +631,6 @@ function calc_fast_cash5000() {
     text.style.display = "none";
     mainbody.style.filter = "blur(0px)";
     alertbox.style.display = "flex";
-
   } else {
     transaction_msg.style.display = "list-item";
     show.style.display = "flex";
@@ -677,7 +648,6 @@ function calc_fast_cash5000() {
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     showbal = formated_showbalance;
 
-
     loaderpage.style.display = "block";
     mainbody.style.filter = "blur(5px)";
 
@@ -686,8 +656,6 @@ function calc_fast_cash5000() {
       alertbox.style.display = "flex";
       mainbody.style.filter = "blur(0px)";
     }, 3500);
-
-
 
     lbl.textContent = "Remaining Balance" + " " + "Rs" + " " + showbal;
     transaction_msg.textContent =
@@ -735,7 +703,6 @@ function calc_fast_cash10000() {
     text.style.display = "none";
     mainbody.style.filter = "blur(0px)";
     alertbox.style.display = "flex";
-
   } else {
     show.style.display = "flex";
     text.style.display = "flex";
@@ -762,8 +729,6 @@ function calc_fast_cash10000() {
       alertbox.style.display = "flex";
       mainbody.style.filter = "blur(0px)";
     }, 3500);
-
-
 
     lbl.textContent = "Remaining Balance" + " " + "Rs" + " " + showbal;
     transaction_msg.textContent =
@@ -810,7 +775,6 @@ function calc_fast_cash15000() {
     text.style.display = "none";
     mainbody.style.filter = "blur(0px)";
     alertbox.style.display = "flex";
-
   } else {
     show.style.display = "flex";
     text.style.display = "flex";
@@ -836,8 +800,6 @@ function calc_fast_cash15000() {
       alertbox.style.display = "flex";
       mainbody.style.filter = "blur(0px)";
     }, 3500);
-
-
 
     lbl.textContent = "Remaining Balance" + " " + "Rs" + " " + showbal;
     transaction_msg.textContent =
@@ -903,7 +865,6 @@ function calc_fast_cash20000() {
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     showbal = formated_showbalance;
 
-
     loaderpage.style.display = "block";
     mainbody.style.filter = "blur(5px)";
 
@@ -912,7 +873,6 @@ function calc_fast_cash20000() {
       alertbox.style.display = "flex";
       mainbody.style.filter = "blur(0px)";
     }, 3500);
-
 
     lbl.textContent = "Remaining Balance" + " " + "Rs" + " " + showbal;
     transaction_msg.textContent =
