@@ -68,7 +68,7 @@ function check_pincode() {
 
       mainbody.style.filter = "blur(0px)";
       show.style.display = "flex";
-    }, 3500);
+    }, 2000);
   }
 }
 
@@ -95,7 +95,7 @@ function Check_balance() {
     iconbtn.style.display = "block";
 
     loaderpage.style.display = "none";
-  }, 3500);
+  }, 2000);
 
   var showbalance = document.getElementById("Balance");
 
@@ -347,7 +347,7 @@ function calc_amount() {
         loaderpage.style.display = "none";
         alertbox.style.display = "flex";
         mainbody.style.filter = "blur(0px)";
-      }, 3500);
+      }, 2000);
 
       transaction_msg.style.display = "list-item";
       show.style.display = "flex";
@@ -491,7 +491,7 @@ function calc_amount_transfer() {
         loaderpage.style.display = "none";
         alertbox.style.display = "flex";
         mainbody.style.filter = "blur(0px)";
-      }, 3500);
+      }, 2000);
 
       transaction_msg.textContent =
         "Successfully Tranfer to  " +
@@ -652,7 +652,7 @@ function calc_fast_cash5000() {
       loaderpage.style.display = "none";
       alertbox.style.display = "flex";
       mainbody.style.filter = "blur(0px)";
-    }, 3500);
+    }, 2000);
 
     lbl.textContent = "Remaining Balance" + " " + "Rs" + " " + showbal;
     transaction_msg.textContent =
@@ -725,7 +725,7 @@ function calc_fast_cash10000() {
       loaderpage.style.display = "none";
       alertbox.style.display = "flex";
       mainbody.style.filter = "blur(0px)";
-    }, 3500);
+    }, 2000);
 
     lbl.textContent = "Remaining Balance" + " " + "Rs" + " " + showbal;
     transaction_msg.textContent =
@@ -796,7 +796,7 @@ function calc_fast_cash15000() {
       loaderpage.style.display = "none";
       alertbox.style.display = "flex";
       mainbody.style.filter = "blur(0px)";
-    }, 3500);
+    }, 2000);
 
     lbl.textContent = "Remaining Balance" + " " + "Rs" + " " + showbal;
     transaction_msg.textContent =
@@ -869,7 +869,7 @@ function calc_fast_cash20000() {
       loaderpage.style.display = "none";
       alertbox.style.display = "flex";
       mainbody.style.filter = "blur(0px)";
-    }, 3500);
+    }, 2000);
 
     lbl.textContent = "Remaining Balance" + " " + "Rs" + " " + showbal;
     transaction_msg.textContent =
