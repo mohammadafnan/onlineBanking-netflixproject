@@ -29,6 +29,7 @@
           placeholder="Enter pin code"
           id="inputvalue"
           maxlength="4"
+          oninput="event.target.value = event.target.value.replace(/[^0-9]/,'');"
         /><br />
         <button id="pin_btn" onclick="check_pincode()">Done</button>
 
@@ -86,6 +87,8 @@
     </div>
 
     <div id="flex-widthdraw" class="drop">
+      <label >Enter Account Number</label>
+
       <input
         type="number"
         placeholder="Enter Widthraw Amount"
@@ -101,9 +104,10 @@
       </div>
     </div>
 
+
     <div id="flex-transfer" class="drop1">
+      <label >Select Bank</label>
       <select name="cars" id="banklist" class="select" >
-        <option selected>Select Bank</option>
         <option value="Ubl">Ubl</option>
         <option value="Hbl">Hbl</option>
         <option value="Alfalah">Alfalah</option>
@@ -112,6 +116,8 @@
       <p id="errbanklist"></p>
 
       <br />
+      <label >Enter Account Number</label>
+
       <input
         type="number"
         placeholder="Enter Account Number"
@@ -122,7 +128,7 @@
       <p id="errtransferacct"></p>
 
       <br />
-
+      <label >Enter Amount</label>
       <input
         type="number"
         placeholder="Enter Widthraw Amount"

@@ -46,13 +46,13 @@ function check_pincode() {
 
   if (newinputValue == "") {
     alertboxpinn.style.display = "flex";
-    messageElement.style.color = "#e77066";
+    messageElement.style.color = "rgb(231 112 102 / 48%)";
     messageElement.textContent = "Enter Pin Code";
     user_pincode_put.value = "";
   } else if (user_pincode != newinputValue) {
     messageElement.textContent = "Pin code is not correct";
     alertboxpinn.style.display = "flex";
-    messageElement.style.color = "#e77066";
+    messageElement.style.color = "rgb(231 112 102 / 48%)";
     user_pincode_put.value = "";
   } else {
     messageElement.textContent = "Pin code is correct";
@@ -299,7 +299,9 @@ function calc_amount() {
     alertbox.style.display = "none";
     err_input.style.display = "flex";
     err_input.textContent = "Please enter Amount";
-    err_input.style.color = "#e77066";
+    err_input.style.color = "rgb(231 112 102 / 48%)";
+    err_input.style.paddingTop = "5px";
+
     mainbody.style.filter = "blur(5px)";
   } else {
     err_input.style.display = "";
@@ -309,7 +311,7 @@ function calc_amount() {
 
   if (balance < widthdraw_value.value) {
     lbl.textContent = "Insuffient Balance";
-    lbl.style.color = "#e77066";
+    lbl.style.color = "rgb(231 112 102 / 48%)";
     transaction_msg.style.display = "none";
     alertbox.style.display = "flex";
 
@@ -318,7 +320,7 @@ function calc_amount() {
     mainbody.style.filter = "blur(0px)";
   } else if (widthdraw_value.value < 0) {
     lbl.textContent = "Negative value not allowed";
-    lbl.style.color = "#e77066";
+    lbl.style.color = "rgb(231 112 102 / 48%)";
     transaction_msg.style.display = "none";
     show.style.display = "none";
     widthdraw_value.value = "";
@@ -410,11 +412,17 @@ function calc_amount_transfer() {
     alertbox.style.display = "none";
     err_input.style.display = "flex";
     err_input.textContent = "Please Enter Amount";
-    err_input.style.color = "#e77066";
+    err_input.style.color = "rgb(231 112 102 / 48%)";
+    err_input.style.paddingTop = "5px";
+
     errbanklist.textContent = " Please Select Bank ";
-    errbanklist.style.color = "#e77066";
+    errbanklist.style.color = "rgb(231 112 102 / 48%)";
+    errbanklist.style.paddingTop = "5px";
+
     errtransferacct.textContent = "Please Enter Account Number ";
-    errtransferacct.style.color = "#e77066";
+    errtransferacct.style.color = "rgb(231 112 102 / 48%)";
+    errtransferacct.style.paddingTop = "5px";
+
     mainbody.style.filter = "blur(5px)";
   } else {
     err_input.style.display = "";
@@ -431,7 +439,7 @@ function calc_amount_transfer() {
     transferacctvalue.value != ""
   ) {
     lbl.textContent = "Insuffient Balance";
-    lbl.style.color = "#e77066";
+    lbl.style.color = "rgb(231 112 102 / 48%)";
     transaction_msg.style.display = "none";
     showtransfer.style.display = "none";
     transfervalue.value = "";
@@ -446,7 +454,7 @@ function calc_amount_transfer() {
     transferacctvalue.value != ""
   ) {
     lbl.textContent = "Negative value not allowed";
-    lbl.style.color = "#e77066";
+    lbl.style.color = "rgb(231 112 102 / 48%)";
     transaction_msg.style.display = "none";
     showtransfer.style.display = "none";
     transfervalue.value = "";
@@ -509,7 +517,7 @@ function calc_amount_transfer() {
       // mainbody.style.filter = "blur(0px)";
       transfervalue.value = "";
       transferacctvalue.value = "";
-      banklist.value = "Select Bank";
+      banklist.value = "";
     } else {
       lbl.textContent = "";
     }
@@ -622,7 +630,7 @@ function calc_fast_cash5000() {
 
   if (balance < cashvalue1) {
     lbl.textContent = "no/insuffient balance";
-    lbl.style.color = "#e77066";
+    lbl.style.color = "rgb(231 112 102 / 48%)";
     transaction_msg.style.display = "none";
     show.style.display = "none";
     text.style.display = "none";
@@ -694,7 +702,7 @@ function calc_fast_cash10000() {
 
   if (balance < cashvalue2) {
     lbl.textContent = "no/insuffient balance";
-    lbl.style.color = "#e77066";
+    lbl.style.color = "rgb(231 112 102 / 48%)";
     transaction_msg.style.display = "none";
     show.style.display = "none";
     text.style.display = "none";
@@ -766,7 +774,7 @@ function calc_fast_cash15000() {
 
   if (balance < cashvalue3) {
     lbl.textContent = "no/insuffient balance";
-    lbl.style.color = "#e77066";
+    lbl.style.color = "rgb(231 112 102 / 48%)";
     transaction_msg.style.display = "none";
     show.style.display = "none";
     text.style.display = "none";
@@ -839,7 +847,7 @@ function calc_fast_cash20000() {
 
   if (balance < cashvalue4) {
     lbl.textContent = "no/insuffient balance";
-    lbl.style.color = "#e77066";
+    lbl.style.color = "rgb(231 112 102 / 48%)";
     transaction_msg.style.display = "none";
     show.style.display = "none";
     text.style.display = "none";
