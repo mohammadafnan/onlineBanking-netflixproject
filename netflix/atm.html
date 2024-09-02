@@ -74,11 +74,7 @@
               + Show fast cash
             </button>
 
-            <button
-              class="logoutbtn"
-              id="btnlogout"
-              onclick="logout()"
-            >
+            <button class="logoutbtn" id="btnlogout" onclick="logout()">
               Logout
             </button>
           </div>
@@ -87,7 +83,7 @@
     </div>
 
     <div id="flex-widthdraw" class="drop">
-      <label >Enter Account Number</label>
+      <label>Enter Account Number</label>
 
       <input
         type="number"
@@ -104,10 +100,9 @@
       </div>
     </div>
 
-
     <div id="flex-transfer" class="drop1">
-      <label >Select Bank</label>
-      <select name="cars" id="banklist" class="select" >
+      <label>Select Bank</label>
+      <select name="cars" id="banklist" class="select">
         <option value="Ubl">Ubl</option>
         <option value="Hbl">Hbl</option>
         <option value="Alfalah">Alfalah</option>
@@ -116,7 +111,7 @@
       <p id="errbanklist"></p>
 
       <br />
-      <label >Enter Account Number</label>
+      <label>Enter Account Number</label>
 
       <input
         type="number"
@@ -124,16 +119,17 @@
         id="transferacctvalue"
         oninput="event.target.value = event.target.value.replace(/[^0-9]/,'');"
       />
-      
+
       <p id="errtransferacct"></p>
 
       <br />
-      <label >Enter Amount</label>
+      <label>Enter Amount</label>
       <input
         type="number"
         placeholder="Enter Widthraw Amount"
         id="transfervalue"
-        type="number"  oninput="event.target.value = event.target.value.replace(/[^0-9]/,'');"
+        type="number"
+        oninput="event.target.value = event.target.value.replace(/[^0-9]/,'');"
       />
       <p id="errtransfer"></p>
 
@@ -215,3 +211,66 @@
     </div>
   </body>
 </html>
+<!-- 
+<div class="container">
+  <div class="box">box</div>
+  <div class="box">box</div>
+  <div class="box">box</div>
+  <div class="box">box</div>
+  <div class="box">box</div>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box {
+    width: 200px;
+    height: 100px;
+    border: 2px solid violet;
+    text-align: center;
+  }
+</style> -->
+
+<script>
+  // var b = document.getElementsByClassName("box");
+  // b[0].style.color = "green";
+  // b[0].style.backgroundColor = "lightgreen";
+  // b[0].style.fontSize = "24px";
+  // b[1].style.color = "blue";
+  // b[1].style.backgroundColor = "lightblue";
+  // b[1].style.fontSize = "24px";
+  // b[2].style.color = "gray";
+  // b[2].style.backgroundColor = "skyblue";
+  // b[2].style.fontSize = "24px";
+  // b[3].style.color = "red";
+  // b[3].style.backgroundColor = "black";
+  // b[3].style.fontSize = "24px";
+  // b[4].style.color = "green";
+  // b[4].style.backgroundColor = "orange";
+  // b[4].style.fontSize = "24px";
+  // b[5].style.color = "green";
+  // b[5].style.backgroundColor = "orange";
+  // b[5].style.fontSize = "24px";
+
+  // var div = document.createElement("div");
+  // div.innerHTML="hi, i am div"
+  // div.setAttribute("class","divo")
+  // document.querySelector(".container").append(div)
+
+  var x = document.getElementsByClassName("container");
+
+  function randomColor() {
+    var val1 = Math.ceil(0 + Math.random() * 255);
+    var val2 = Math.ceil(0 + Math.random() * 255);
+    var val3 = Math.ceil(0 + Math.random() * 255);
+    return `rgb(${val1} , ${val2} , ${val3}) `
+  }
+
+  Array.from(x).forEach(y => {
+    y.style.backgroundColor = randomColor();
+    y.style.color = randomColor();
+  });
+</script>
