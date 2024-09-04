@@ -88,3 +88,6 @@ if (rand < 0.33) {
 }
 
 console.log("Your business name" + ` ${first} ${second}  ${third} `);
+
+
+

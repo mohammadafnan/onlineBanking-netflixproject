@@ -1,0 +1,191 @@
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./practice.js"></script>
+
+  <style>
+    body {
+      background-color: #0f0f0f;
+      font-family: sans-serif;
+    }
+    .card {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  
+    img {
+      height: 100px;
+      border-radius: 10px;
+    }
+    .imgcon {
+      position: relative;
+    }
+  
+    .duration {
+      color: white;
+      background-color: #414141;
+      height: fit-content;
+      width: max-content;
+      padding: 5px 10px;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 2;
+      right: 3;
+      font-size: 12px;
+    }
+    .title {
+      margin-left: 10px;
+      color: white;
+    }
+  
+    .disc {
+      color: gray;
+      margin-left: 10px;
+      position: relative;
+      top: 10px;
+      font-size: 15px;
+    }
+  
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box {
+      width: 200px;
+      height: 30px;
+      /* border: 2px solid violet; */
+      text-align: center;
+    }
+  </style>
+
+</head>
+<body>
+  
+
+  <div class="container">
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+  </div>
+  
+  <div class="main"></div>
+  
+
+  
+  <script>
+    // var b = document.getElementsByClassName("box");
+    // b[0].style.color = "green";
+    // b[0].style.backgroundColor = "lightgreen";
+    // b[0].style.fontSize = "24px";
+    // b[1].style.color = "blue";
+    // b[1].style.backgroundColor = "lightblue";
+    // b[1].style.fontSize = "24px";
+    // b[2].style.color = "gray";
+    // b[2].style.backgroundColor = "skyblue";
+    // b[2].style.fontSize = "24px";
+    // b[3].style.color = "red";
+    // b[3].style.backgroundColor = "black";
+    // b[3].style.fontSize = "24px";
+    // b[4].style.color = "green";
+    // b[4].style.backgroundColor = "orange";
+    // b[4].style.fontSize = "24px";
+    // b[5].style.color = "green";
+    // b[5].style.backgroundColor = "orange";
+    // b[5].style.fontSize = "24px";
+  
+    // var div = document.createElement("div");
+    // div.innerHTML="hi, i am div"
+    // div.setAttribute("class","divo")
+    // document.querySelector(".container").append(div)
+  
+    var x = document.getElementsByClassName("container");
+  
+    function randomColor() {
+      var val1 = Math.ceil(0 + Math.random() * 255);
+      var val2 = Math.ceil(0 + Math.random() * 255);
+      var val3 = Math.ceil(0 + Math.random() * 255);
+      return `rgb(${val1} , ${val2} , ${val3}) `;
+    }
+  
+    Array.from(x).forEach((y) => {
+      y.style.backgroundColor = randomColor();
+      y.style.color = randomColor();
+    });
+  
+    // function creatCard(thumpnail, title, channename, views, monthsold, duration) {
+    //   document.querySelector(".image").src = thumpnail;
+    //   document.querySelector(".title").innerHTML = title;
+  
+    //   document.querySelector(".duration").innerHTML = duration;
+  
+    //   if (views >= 1000000) {
+    //     views = views / 1000000 + "M";
+    //     document.querySelector(".disc").innerHTML =
+    //       channename + " " + views + " " + "views" + " " +   monthsold + " " + " months ago";
+    //   } else if (views >= 1000) {
+    //     views = views / 1000 + "K";
+    //     document.querySelector(".disc").innerHTML =
+    //       channename +
+    //       " " +
+    //       views +
+    //       "" +
+    //       " Views " +
+    //       " " +
+    //       monthsold +
+    //       " " +
+    //       " months ago ";
+    //   }
+    // }
+  
+    function creatCard(thumpnail, title, channename, views, monthsold, duration) {
+      let viewsnum;
+  
+      if (views < 1000) {
+        viewsnum = views;
+      } else if (views > 1000000) {
+        viewsnum = views / 1000000 + "M";
+      } else {
+        viewsnum = views / 1000 + "k";
+      }
+  
+      let html = `
+    <div class="card">
+      <div class="imgcon">
+        <img class="image" src="${thumpnail}" alt="" />
+        <div class="duration">${duration}</div>
+      </div>
+    
+      <div>
+        <label class="title">${title}</label><br />
+        <label class="disc">${channename} . ${viewsnum}  views . ${monthsold}  months old</label>
+      </div>
+    </div>
+    
+    `
+      document.querySelector(".main").innerHTML = document.querySelector(".main").innerHTML + html;
+    }
+  
+    creatCard(
+      "https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACwWOixJVrKLFindK92kYMgTcQbw",
+      "Introduction to Backend | Sigma Web Development Course -Tutorail video #2",
+      "CodeWithHarry",
+      200,
+      "7 ",
+      "31:22"
+    );
+  </script>
+  
+
+
+</body>
+</html>
+
+
