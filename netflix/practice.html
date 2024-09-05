@@ -108,7 +108,7 @@
       <input type="text" placeholder="Enter views" id="viewsval" />
       <input type="text" placeholder="Enter monthsold" id="monthsoldval" />
       <input type="text" placeholder="Enter duration" id="durationval" />
-      <button id="btn" onclick="creatCard()"disabled >Create Card</button>
+      <button id="btn" onclick="creatCard()" disabled>Create Card</button>
     </div>
 
     <div class="main"></div>
@@ -220,10 +220,12 @@
           document.querySelector(".main").innerHTML + html;
       }
 
-      let button = document.getElementById("btn");
-      let input = document.getElementById("srcval");
-      input.addEventListener("input", function (e) {
-        if (input.value.length == 0) {
+     
+
+        let button = document.getElementById("btn");
+      let srcval = document.getElementById("srcval");
+      srcval.addEventListener("input", function (e) {
+        if (srcval.value.length == 0) {
           button.disabled = true;
         } else {
           button.disabled = false;
