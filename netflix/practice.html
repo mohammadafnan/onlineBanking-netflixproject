@@ -102,12 +102,32 @@
     </div>
 
     <div class="inputdiv">
-      <input type="text" placeholder="Enter image src" id="srcval" />
-      <input type="text" placeholder="Enter Title" id="titleval" />
-      <input type="text" placeholder="Enter channename" id="channenameval" />
-      <input type="text" placeholder="Enter views" id="viewsval" />
-      <input type="text" placeholder="Enter monthsold" id="monthsoldval" />
-      <input type="text" placeholder="Enter duration" id="durationval" />
+      <input
+        type="text"
+        class="inp"
+        placeholder="Enter image src"
+        id="srcval"
+      />
+      <input class="inp" type="text" placeholder="Enter Title" id="titleval" />
+      <input
+        type="text"
+        class="inp"
+        placeholder="Enter channename"
+        id="channenameval"
+      />
+      <input class="inp" type="text" placeholder="Enter views" id="viewsval" />
+      <input
+        type="text"
+        class="inp"
+        placeholder="Enter monthsold"
+        id="monthsoldval"
+      />
+      <input
+        type="text"
+        class="inp"
+        placeholder="Enter duration"
+        id="durationval"
+      />
       <button id="btn" onclick="creatCard()" disabled>Create Card</button>
     </div>
 
@@ -220,12 +240,69 @@
           document.querySelector(".main").innerHTML + html;
       }
 
-     
+      let button = document.getElementById("btn");
+      let thumpnail = document.getElementById("srcval");
+      let title = document.getElementById("titleval");
+      let channename = document.getElementById("channenameval");
+      let views = document.getElementById("viewsval");
+      let monthsold = document.getElementById("monthsoldval");
+      let duration = document.getElementById("durationval");
+      // let inp = document.getElementById("inp");
 
-        let button = document.getElementById("btn");
-      let srcval = document.getElementById("srcval");
-      srcval.addEventListener("input", function (e) {
-        if (srcval.value.length == 0) {
+      const inppu = document.querySelectorAll(".inp");
+
+      // inppu.forEach((t) => {
+
+      //   t.addEventListener("input", () =>  {
+      //     if (t.value.length == 0) {
+      //       button.disabled = true;
+      //     } else {
+      //       button.disabled = false;
+      //     }
+      //   });
+      // });
+
+      // let inputdiv = document.getElementById("inputdiv");
+
+      // thumpnail.addEventListener("input", function (e) {
+      //   if (thumpnail.value.length == 0) {
+      //     button.disabled = true;
+      //   } else {
+      //     button.disabled = false;
+      //   }
+      // });
+
+      // title.addEventListener("input", function (e) {
+      //   if (title.value.length == 0) {
+      //     button.disabled = true;
+      //   } else {
+      //     button.disabled = false;
+      //   }
+      // });
+
+      // channename.addEventListener("input", function (e) {
+      //   if (channename.value.length == 0) {
+      //     button.disabled = true;
+      //   } else {
+      //     button.disabled = false;
+      //   }
+      // });
+      // views.addEventListener("input", function (e) {
+      //   if (views.value.length == 0) {
+      //     button.disabled = true;
+      //   } else {
+      //     button.disabled = false;
+      //   }
+      // });
+      // monthsold.addEventListener("input", function (e) {
+      //   if (monthsold.value.length == 0) {
+      //     button.disabled = true;
+      //   } else {
+      //     button.disabled = false;
+      //   }
+      // });
+      duration.addEventListener("input", function (e) {
+        if (duration.value.length == 0) {
           button.disabled = true;
         } else {
           button.disabled = false;
