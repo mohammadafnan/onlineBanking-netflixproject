@@ -96,6 +96,17 @@
       .image:hover {
         background-color: white;
       }
+      h1 {
+        color: #ff0000;
+        position: relative;
+        bottom: 13px;
+      }
+      #err {
+        color: red;
+        text-align: center;
+        padding-top: 200px;
+        font-size: 42px;
+      }
     </style>
   </head>
   <body>
@@ -107,6 +118,8 @@
       <div class="box"></div>
 
       <div class="inputdiv">
+        <div><h1>Youtube</h1></div>
+
         <input
           type="text"
           class="inp"
@@ -143,12 +156,11 @@
           placeholder="Enter duration"
           id="durationval"
         />
-        <button id="btn" onclick="creatCard()" disabled>
-          Create Playlist Card
-        </button>
+        <button id="btn" onclick="creatCard()">Create Playlist Card</button>
       </div>
 
       <div class="main"></div>
+      <div id="err"></div>
     </div>
 
     <script>
@@ -187,11 +199,14 @@
       }
 
       Array.from(x).forEach((y) => {
-        y.style.borderColor = randomColor();
+        y.style.color = randomColor();
         y.style.border = "5px solid";
 
-        y.style.color = randomColor();
+        // y.style.color = randomColor();
       });
+      window.setInterval(function () {
+        randomColor();
+      }, 10);
 
       // function creatCard(thumpnail, title, channename, views, monthsold, duration) {
       //   document.querySelector(".image").src = thumpnail;
@@ -242,7 +257,18 @@
           viewsnum = views / 1000 + "k";
         }
 
-        let html = `
+        if (
+          thumpnail == "" ||
+          title == "" ||
+          channename == "" ||
+          views == "" ||
+          monthsold == "" ||
+          duration == ""
+        ) {
+          err.textContent = "Please Enter Data";
+          err.style.color = "red";
+        } else {
+          let html = `
           <div class="card">
             <div class="imgcon">
               <img class="image" src="${thumpnail}" alt="no image" />
@@ -256,37 +282,11 @@
           </div>
 
           `;
-        document.querySelector(".main").innerHTML =
-          document.querySelector(".main").innerHTML + html;
-      }
-
-      let button = document.getElementById("btn");
-      let thumpnail = document.getElementById("srcval");
-      let title = document.getElementById("titleval");
-      let channename = document.getElementById("channenameval");
-      let views = document.getElementById("viewsval");
-      let monthsold = document.getElementById("monthsoldval");
-      let duration = document.getElementById("durationval");
-      const inppu = document.querySelectorAll(".inp");
-
-      // inppu.forEach((t) => {
-
-      //   t.addEventListener("input", () =>  {
-      //     if (t.value.length == 0) {
-      //       button.disabled = true;
-      //     } else {
-      //       button.disabled = false;
-      //     }
-      //   });
-      // });
-
-      duration.addEventListener("input", function (e) {
-        if (duration.value.length == 0) {
-          button.disabled = true;
-        } else {
-          button.disabled = false;
+          document.querySelector(".main").innerHTML =
+            document.querySelector(".main").innerHTML + html;
+          err.textContent = "";
         }
-      });
+      }
     </script>
   </body>
 </html>
