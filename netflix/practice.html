@@ -50,10 +50,13 @@
       }
 
       .container {
-        display: flex;
+        /* display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
         border-radius: 50px;
+        background-color: transparent;
+        height: auto;
+        padding-bottom: 50px;
       }
       .box {
         width: 200px;
@@ -90,6 +93,9 @@
       .image {
         color: white;
       }
+      .image:hover {
+        background-color: white;
+      }
     </style>
   </head>
   <body>
@@ -99,39 +105,51 @@
       <div class="box"></div>
       <div class="box"></div>
       <div class="box"></div>
-    </div>
 
-    <div class="inputdiv">
-      <input
-        type="text"
-        class="inp"
-        placeholder="Enter image src"
-        id="srcval"
-      />
-      <input class="inp" type="text" placeholder="Enter Title" id="titleval" />
-      <input
-        type="text"
-        class="inp"
-        placeholder="Enter channename"
-        id="channenameval"
-      />
-      <input class="inp" type="text" placeholder="Enter views" id="viewsval" />
-      <input
-        type="text"
-        class="inp"
-        placeholder="Enter monthsold"
-        id="monthsoldval"
-      />
-      <input
-        type="text"
-        class="inp"
-        placeholder="Enter duration"
-        id="durationval"
-      />
-      <button id="btn" onclick="creatCard()" disabled>Create Card</button>
-    </div>
+      <div class="inputdiv">
+        <input
+          type="text"
+          class="inp"
+          placeholder="Enter image src"
+          id="srcval"
+        />
+        <input
+          class="inp"
+          type="text"
+          placeholder="Enter Title"
+          id="titleval"
+        />
+        <input
+          type="text"
+          class="inp"
+          placeholder="Enter channename"
+          id="channenameval"
+        />
+        <input
+          class="inp"
+          type="text"
+          placeholder="Enter views"
+          id="viewsval"
+        />
+        <input
+          type="text"
+          class="inp"
+          placeholder="Enter monthsold"
+          id="monthsoldval"
+        />
+        <input
+          type="text"
+          class="inp"
+          placeholder="Enter duration"
+          id="durationval"
+        />
+        <button id="btn" onclick="creatCard()" disabled>
+          Create Playlist Card
+        </button>
+      </div>
 
-    <div class="main"></div>
+      <div class="main"></div>
+    </div>
 
     <script>
       // var b = document.getElementsByClassName("box");
@@ -169,7 +187,9 @@
       }
 
       Array.from(x).forEach((y) => {
-        y.style.backgroundColor = randomColor();
+        y.style.borderColor = randomColor();
+        y.style.border = "5px solid";
+
         y.style.color = randomColor();
       });
 
@@ -247,8 +267,6 @@
       let views = document.getElementById("viewsval");
       let monthsold = document.getElementById("monthsoldval");
       let duration = document.getElementById("durationval");
-      // let inp = document.getElementById("inp");
-
       const inppu = document.querySelectorAll(".inp");
 
       // inppu.forEach((t) => {
@@ -262,45 +280,6 @@
       //   });
       // });
 
-      // let inputdiv = document.getElementById("inputdiv");
-
-      // thumpnail.addEventListener("input", function (e) {
-      //   if (thumpnail.value.length == 0) {
-      //     button.disabled = true;
-      //   } else {
-      //     button.disabled = false;
-      //   }
-      // });
-
-      // title.addEventListener("input", function (e) {
-      //   if (title.value.length == 0) {
-      //     button.disabled = true;
-      //   } else {
-      //     button.disabled = false;
-      //   }
-      // });
-
-      // channename.addEventListener("input", function (e) {
-      //   if (channename.value.length == 0) {
-      //     button.disabled = true;
-      //   } else {
-      //     button.disabled = false;
-      //   }
-      // });
-      // views.addEventListener("input", function (e) {
-      //   if (views.value.length == 0) {
-      //     button.disabled = true;
-      //   } else {
-      //     button.disabled = false;
-      //   }
-      // });
-      // monthsold.addEventListener("input", function (e) {
-      //   if (monthsold.value.length == 0) {
-      //     button.disabled = true;
-      //   } else {
-      //     button.disabled = false;
-      //   }
-      // });
       duration.addEventListener("input", function (e) {
         if (duration.value.length == 0) {
           button.disabled = true;
