@@ -13,7 +13,9 @@
       .card {
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        position: relative;
+        top: 100px;
+        padding-top: 10px;
       }
 
       input {
@@ -86,8 +88,9 @@
         border-radius: 0px;
         background-color: transparent;
         font-weight: 900;
-        border: 2px solid white;
+        border: 2px solid rgb(255, 0, 0);
         color: white;
+        cursor: pointer;
         /* height: 50px; */
       }
 
@@ -96,7 +99,10 @@
         justify-content: center;
         height: 50px;
         gap: 10px;
-        margin-top: 20px;
+        margin-top: 40px;
+        /* position: fixed; */
+        /* top: 0;
+        z-index: 99; */
       }
 
       .image {
@@ -116,6 +122,13 @@
         padding-top: 200px;
         font-size: 42px;
       }
+
+      .fix {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 60px;
+      }
     </style>
   </head>
   <body>
@@ -126,46 +139,48 @@
       <div class="box"></div>
       <div class="box"></div>
 
-      <div class="inputdiv">
-        <div><h1>Youtube</h1></div>
+      <div class="fix">
+        <div class="inputdiv">
+          <div><h1>Youtube</h1></div>
 
-        <input
-          type="text"
-          class="inp"
-          placeholder="Enter image src"
-          id="srcval"
-        />
-        <input
-          class="inp"
-          type="text"
-          placeholder="Enter Title"
-          id="titleval"
-        />
-        <input
-          type="text"
-          class="inp"
-          placeholder="Enter channename"
-          id="channenameval"
-        />
-        <input
-          class="inp"
-          type="text"
-          placeholder="Enter views"
-          id="viewsval"
-        />
-        <input
-          type="text"
-          class="inp"
-          placeholder="Enter monthsold"
-          id="monthsoldval"
-        />
-        <input
-          type="text"
-          class="inp"
-          placeholder="Enter duration"
-          id="durationval"
-        />
-        <button id="btn" onclick="creatCard()">Create Playlist Card</button>
+          <input
+            type="text"
+            class="inp"
+            placeholder="Enter image src"
+            id="srcval"
+          />
+          <input
+            class="inp"
+            type="text"
+            placeholder="Enter Title"
+            id="titleval"
+          />
+          <input
+            type="text"
+            class="inp"
+            placeholder="Enter channename"
+            id="channenameval"
+          />
+          <input
+            class="inp"
+            type="text"
+            placeholder="Enter views"
+            id="viewsval"
+          />
+          <input
+            type="text"
+            class="inp"
+            placeholder="Enter monthsold"
+            id="monthsoldval"
+          />
+          <input
+            type="text"
+            class="inp"
+            placeholder="Enter duration"
+            id="durationval"
+          />
+          <button id="btn" onclick="creatCard()">Create Playlist Card</button>
+        </div>
       </div>
 
       <div class="main"></div>
@@ -198,7 +213,7 @@
       // div.setAttribute("class","divo")
       // document.querySelector(".container").append(div)
 
-      var x = document.getElementsByClassName("container");
+      // var x = document.getElementsByClassName("container");
 
       function randomColor() {
         var val1 = Math.ceil(0 + Math.random() * 255);
@@ -207,15 +222,12 @@
         return `rgb(${val1} , ${val2} , ${val3}) `;
       }
 
-      Array.from(x).forEach((y) => {
-        y.style.color = randomColor();
-        y.style.border = "5px solid";
-
-        // y.style.color = randomColor();
-      });
-      window.setInterval(function () {
-        randomColor();
-      }, 10);
+      setInterval(function () {
+        Array.from(x).forEach((y) => {
+          y.style.color = randomColor();
+          y.style.border = "5px solid";
+        });
+      }, 5000);
 
       // function creatCard(thumpnail, title, channename, views, monthsold, duration) {
       //   document.querySelector(".image").src = thumpnail;
@@ -277,11 +289,19 @@
           err.textContent = "Please Enter Data";
           err.style.color = "red";
         } else {
+          // <video width="320" height="240" autoplay controls>
+          //   <source src="movie.mp4" type="video/mp4">
+          //   <source src="movie.ogg" type="video/ogg">
+          //   Your browser does not support the video tag.
+          // </video>
+
           let html = `
           <div class="card">
             <div class="imgcon">
-              <img class="image" src="${thumpnail}" alt="no image" />
-              <div class="duration">${duration}</div>
+                 <img class="image" src="${thumpnail}" alt="no image" />
+     
+             
+             <div class="duration">${duration}</div>
             </div>
 
             <div>
