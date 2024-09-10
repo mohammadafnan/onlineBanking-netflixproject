@@ -129,6 +129,10 @@
         top: 0;
         left: 60px;
       }
+
+      .eevlbl {
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -181,6 +185,9 @@
           />
           <button id="btn" onclick="creatCard()">Create Playlist Card</button>
         </div>
+
+        <div class="eevlbl">change me</div>
+        <button id="click">click</button> <br />
       </div>
 
       <div class="main"></div>
@@ -188,6 +195,22 @@
     </div>
 
     <script>
+      let click = document.getElementById("click");
+      click.addEventListener("click", () => {
+        // alert("event is working");
+        document.querySelector(".eevlbl").innerHTML = "your are change";
+      });
+
+      console.log("this is 1st");
+      console.log("this is 2nd");
+      setTimeout(() => {
+        console.log("this is 3rd ");
+      }, 3000);
+      console.log("this is 4th");
+
+
+
+      
       // var b = document.getElementsByClassName("box");
       // b[0].style.color = "green";
       // b[0].style.backgroundColor = "lightgreen";
@@ -223,10 +246,10 @@
       }
 
       setInterval(function () {
-        Array.from(x).forEach((y) => {
-          y.style.color = randomColor();
-          y.style.border = "5px solid";
-        });
+        // Array.from(x).forEach((y) => {
+        //   y.style.color = randomColor();
+        //   y.style.border = "5px solid";
+        // });
       }, 5000);
 
       // function creatCard(thumpnail, title, channename, views, monthsold, duration) {

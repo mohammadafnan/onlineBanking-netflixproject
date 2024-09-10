@@ -89,5 +89,54 @@ if (rand < 0.33) {
 
 console.log("Your business name" + ` ${first} ${second}  ${third} `);
 
+console.log("this is 1st");
+console.log("this is 2nd");
+setTimeout(() => {
+  console.log("this is 3rd ");
+}, 3000);
+console.log("this is 4th");
 
+console.log("this is promise");
 
+let promise1 = new Promise((resolve, reject) => {
+  let time = Math.random();
+  if (time < 0.4) {
+    reject("Random no is less than 0.4 which is err");
+  } else {
+    setTimeout(() => {
+      // console.log("Promise one is done");
+      resolve("By promise 1");
+    }, 3000);
+  }
+});
+let promise2 = new Promise((resolve, reject) => {
+  let time = Math.random();
+  if (time < 0.4) {
+    reject("Random no is less than 0.4 which is err 2");
+  } else {
+    setTimeout(() => {
+      // console.log("Promise two is done");
+      resolve("By promise 2");
+    }, 5000);
+  }
+});
+let promise3 = new Promise((resolve, reject) => {
+  let time = Math.random();
+  if (time < 0.4) {
+    reject("Random no is less than 0.4 which is err 3");
+  } else {
+    setTimeout(() => {
+      // console.log("Promise three is done");
+      resolve("By promise 3");
+    }, 1000);
+  }
+});
+
+let promres = Promise.race([promise1, promise2, promise3]);
+promres
+  .then((x) => {
+    console.log(x);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
