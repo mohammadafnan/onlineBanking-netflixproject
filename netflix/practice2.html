@@ -62,6 +62,7 @@
         await randomelay();
         let d = document.createElement("div");
         d.innerHTML = txt;
+
         document.body.append(d);
       };
 
@@ -77,7 +78,12 @@
       async function main() {
         setInterval(() => {
           let t = document.body.lastElementChild;
-          t.innerHTML = t.innerHTML + ".";
+
+          if (t.innerHTML.endsWith("...")) {
+            t.innerHTML = t.innerHTML.slice(0, t.innerHTML.length - 3);
+          } else {
+            t.innerHTML = t.innerHTML + ".";
+          }
         }, 700);
 
         let hackertext = [
@@ -87,6 +93,7 @@
           "Sending all data files to server",
           "Cleaning up",
         ];
+        hackertext.push("Done");
 
         for (const txt of hackertext) {
           await creatdiv(txt);
