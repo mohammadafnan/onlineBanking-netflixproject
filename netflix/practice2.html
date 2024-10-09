@@ -58,48 +58,29 @@
 
       // main();
 
-      creatdiv = async (txt) => {
-        await randomelay();
+      function creatdiv(ele) {
         let d = document.createElement("div");
-        d.innerHTML = txt;
-
+        d.innerHTML = ele;
         document.body.append(d);
-      };
-
-      randomelay = async () => {
-        return new Promise((resolve, reject) => {
-          time = 7 * Math.random();
-          setTimeout(() => {
-            resolve();
-          }, time * 1000);
-        });
-      };
-
-      async function main() {
-        setInterval(() => {
-          let t = document.body.lastElementChild;
-
-          if (t.innerHTML.endsWith("...")) {
-            t.innerHTML = t.innerHTML.slice(0, t.innerHTML.length - 3);
-          } else {
-            t.innerHTML = t.innerHTML + ".";
-          }
-        }, 700);
-
-        let hackertext = [
-          "Initializing Hacking",
-          "Reading your files",
-          "Password files Detected",
-          "Sending all data files to server",
-          "Cleaning up",
-        ];
-        hackertext.push("Done");
-
-        for (const txt of hackertext) {
-          await creatdiv(txt);
-        }
       }
-      main();
+
+      let num = [1, 2, 3, 4, 5];
+
+      for (const ele of num) {
+        creatdiv(ele);
+      }
+
+      function fact() {
+        fac = 1;
+        for (let i = 1; i <= num.length; i++) {
+          fac = fac * i;
+          console.log(fac);
+        }
+        let h = document.createElement("h1");
+        h.innerHTML = fac;
+        document.body.append(h);
+      }
+      fact();
     </script>
   </body>
 </html>
