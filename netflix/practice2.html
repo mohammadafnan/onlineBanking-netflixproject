@@ -58,29 +58,67 @@
 
       // main();
 
-      function creatdiv(ele) {
-        let d = document.createElement("div");
-        d.innerHTML = ele;
+      // function creatdiv(ele) {
+      //   let d = document.createElement("div");
+      //   d.innerHTML = ele;
+      //   document.body.append(d);
+      // }
+
+      // let num = [1, 2, 3, 4, 5];
+
+      // for (const ele of num) {
+      //   creatdiv(ele);
+      // }
+
+      // function fact() {
+      //   fac = 1;
+      //   for (let i = 1; i <= num.length; i++) {
+      //     fac = fac * i;
+      //     console.log(fac);
+      //   }
+      //   let h = document.createElement("h1");
+      //   h.innerHTML = fac;
+      //   document.body.append(h);
+      // }
+      // fact();
+      setime = async () => {
+        setInterval(() => {
+          randomtext();
+        }, 500);
+      }
+      creatdiv = async (i) => {
+        await randomtext();
+        let d = document.createElement("h1");
+        d.innerHTML = i;
         document.body.append(d);
-      }
+      };
+      randomtext = async () => {
+        return new Promise((resolve, reject) => {
+          // time = 5 * Math.random();
+          setTimeout(() => {
+            resolve();
+          }, 1000);
+        });
+      };
 
-      let num = [1, 2, 3, 4, 5];
+ ;
 
-      for (const ele of num) {
-        creatdiv(ele);
-      }
+      setime();
 
-      function fact() {
-        fac = 1;
-        for (let i = 1; i <= num.length; i++) {
-          fac = fac * i;
-          console.log(fac);
+      async function main() {
+        let randomText = [
+          "Initializing Hacking",
+          "Reading your files",
+          "Password files Detected",
+          "Sending all data files to server",
+          "Cleaning up",
+        ];
+
+        for (const i of randomText) {
+          await creatdiv(i);
         }
-        let h = document.createElement("h1");
-        h.innerHTML = fac;
-        document.body.append(h);
       }
-      fact();
+      main();
     </script>
   </body>
 </html>
