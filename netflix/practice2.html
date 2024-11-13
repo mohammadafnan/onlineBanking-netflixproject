@@ -85,7 +85,7 @@
         setInterval(() => {
           randomtext();
         }, 500);
-      }
+      };
       creatdiv = async (i) => {
         await randomtext();
         let d = document.createElement("h1");
@@ -100,8 +100,6 @@
           }, 1000);
         });
       };
-
- ;
 
       setime();
 
@@ -118,7 +116,23 @@
           await creatdiv(i);
         }
       }
-      main();
+      // main();
+
+      var data = "The ottoman Empire";
+      console.log(data);
+
+      localStorage.setItem("series", data);
+      var getdata = localStorage.getItem("series", data);
+
+      var obj = {
+        car: "Range Rover",
+        model: 2024,
+        color: "black",
+      };
+
+      // alert(obj);
+
+      localStorage.setItem("object", JSON.stringify(obj));
     </script>
   </body>
 </html>

@@ -307,4 +307,127 @@ console.log("Your business name" + ` ${first} ${second}  ${third} `);
 
 // main();
 
+function list() {
+  console.log("honda");
+  console.log("alto");
+  console.log("civic");
+}
 
+list();
+
+let students = ["Afnan khan", "Nomani", "Affani", "Ali", "Anas"];
+let Home = [];
+console.log(students);
+
+for (const stu of students) {
+  if (stu.length < 6) {
+    Home.push("Small Home" + stu);
+  } else if (stu.length < 8) {
+    Home.push("Medium Home" + stu);
+  } else if (stu.length <= 10) {
+    Home.push("Big Home" + stu);
+  } else {
+    Home.push("None" + stu);
+  }
+}
+console.log(Home);
+
+var data = "The ottoman Empire";
+console.log(data);
+
+// localStorage.setItem("series", data);
+
+function sum(a, b) {
+  x = a + b;
+}
+sum(7, 3);
+console.log(" The Sum is", x);
+
+pizzafla = ["Chiken tikka", "Chiken chess", "Chiken fajita", " chiken sharma"];
+
+function filterr(pizzafla) {
+  if (pizzafla == "Chiken tikka") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(pizzafla.filter(filterr));
+
+pizzaa = [
+  {
+    id: 10014,
+    flavour: "chiken chezy",
+    size: "Large",
+    type: "crust",
+  },
+  {
+    id: 10015,
+    flavour: "chiken tikka",
+    size: "x-Large",
+    type: "stuff",
+  },
+  {
+    id: 10016,
+    flavour: "chiken afghani",
+    size: "midium",
+    type: "stuff",
+  },
+];
+
+let filteredpizzaa = pizzaa.filter((pizzaa) => {
+  return pizzaa.id == 10015;
+});
+
+console.log(filteredpizzaa);
+
+for (const key in pizzaa) {
+  let val = pizzaa[key];
+
+  console.log(val);
+}
+
+// Report Card
+marks = [50, 60, 70, 80, 90, 100];
+
+//Calc Sum
+function sum2() {
+  let res = 0;
+  for (let i = 0; i < marks.length; i++) {
+    let res2 = marks[i];
+    res = res + res2 / marks.length;
+  }
+  // return console.log(res + "%");
+}
+sum2();
+
+//Calc Grade
+function grade(mark) {
+  if (mark == 100) {
+    return "A++";
+  } else if (mark >= 90 ) {
+    return "A";
+  } else if (mark >= 80 ) {
+    return "B";
+  } else if (mark >= 70 ) {
+    return "C";
+  } else if (mark >= 60 ) {
+    return "D";
+  } else {
+    return "F";
+  }
+}
+console.log(grade(52));
+// grade(85);
+
+function hasPassed(score) {
+  if (grade(score) == "A++" || grade(score) == "A" || grade(score) == "B" || grade(score) == "C" || grade(score) == "D") {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(hasPassed(52));
+
+// hasPassed(40);
