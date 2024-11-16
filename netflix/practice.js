@@ -308,3 +308,67 @@ console.log("Your business name" + ` ${first} ${second}  ${third} `);
 // main();
 
 
+
+
+let character = "*";
+let count = 8;
+let rows = []
+
+function print(x) {
+  if (x == true) {
+    upparamid()
+    console.log("up paramid")
+  }
+
+  else {
+    downparamid()
+    console.log("down paramid")
+  }
+
+}
+print(true)
+
+
+function upparamid() {
+  for (let i = 1; i <= count; i++) {
+
+    rows.push(padRow(i, count))
+
+  }
+  let res1 = ""
+
+  for (const row of rows) {
+    res1 = res1 + row + '\n'
+
+  }
+  console.log(res1);
+
+
+
+}
+
+// upparamid()
+
+
+function downparamid() {
+  for (let i = count; i > 0; i--) {
+    rows.push(padRow(i, count))
+
+  }
+  let res2 = ""
+
+  for (const row of rows) {
+    res2 = res2 + row + '\n'
+  }
+  console.log(res2)
+
+}
+
+function padRow(RowNumber, Rowcount) {
+  return " ".repeat(Rowcount - RowNumber) + character.repeat(2 * RowNumber - 1) + " ".repeat(Rowcount - RowNumber)
+}
+
+padRow()
+// downparamid()
+
+
