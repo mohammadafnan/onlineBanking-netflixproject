@@ -7,10 +7,34 @@
     <script src="./test.js"></script>
   </head>
   <body>
+    <style>
+      body {
+        background: rgb(32, 32, 32);
+        color: aliceblue;
+      }
+    </style>
     <h1>Discount Finder</h1>
-    <input id="price" type="number" placeholder="price" />
-    <input id="discount" type="number" placeholder="Discount %" />
-    <button id="btn" onclick="checkdis()">Check</button><br />
+    <label for="">Price</label>
+    <input
+      id="price"
+      type="number"
+      placeholder="Enter price"
+   
+    />
+    <label for="">Discount %</label>
+    <input
+      style="background-color: green; color: aliceblue; border: 0"
+      id="discount"
+      type="number"
+      placeholder="Enter Discount %"
+      value="20"
+      readonly
+    />
+    <label for="">Coupon Code</label><sup> (Special Discount)</sup>
+    <input id="Coupon" type="number" placeholder="Enter Coupon Code" />
+    <button id="btn" onclick="checkdis()">Check</button>
+    <!-- <button id="resetBtn" onclick="reset()">Reset</button> -->
+
     <ul>
       <li><label id="desc"></label></li>
     </ul>
