@@ -406,28 +406,103 @@ sum2();
 function grade(mark) {
   if (mark == 100) {
     return "A++";
-  } else if (mark >= 90 ) {
+  } else if (mark >= 90) {
     return "A";
-  } else if (mark >= 80 ) {
+  } else if (mark >= 80) {
     return "B";
-  } else if (mark >= 70 ) {
+  } else if (mark >= 70) {
     return "C";
-  } else if (mark >= 60 ) {
+  } else if (mark >= 60) {
     return "D";
   } else {
     return "F";
   }
 }
-console.log(grade(52));
+// console.log(grade(52));
 // grade(85);
 
 function hasPassed(score) {
-  if (grade(score) == "A++" || grade(score) == "A" || grade(score) == "B" || grade(score) == "C" || grade(score) == "D") {
+  if (
+    grade(score) == "A++" ||
+    grade(score) == "A" ||
+    grade(score) == "B" ||
+    grade(score) == "C" ||
+    grade(score) == "D"
+  ) {
     return true;
   } else {
     return false;
   }
 }
-console.log(hasPassed(52));
+// console.log(hasPassed(62));
 
-// hasPassed(40);
+function getAverage(score) {
+  let sum = 0;
+
+  for (const i of score) {
+    sum = sum + i;
+  }
+  return sum / score.length;
+}
+
+function studentMsg(totalscores, studentscore) {
+  if (hasPassed(totalscores) != "F") {
+    return (
+      " Class average: " +
+      getAverage(totalscores) +
+      "" +
+      " Your grade: " +
+      grade(studentscore) +
+      " You passed the course. "
+    );
+  } else {
+    return (
+      " Class average: " +
+      getAverage(totalscores) +
+      "" +
+      " Your grade: " +
+      grade(studentscore) +
+      " You failed the course. "
+    );
+  }
+}
+console.log(studentMsg([92, 88, 57, 67, 38], 60));
+
+items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+itms = [];
+
+let res = items.slice(0, 5);
+// let res2 = itms.push(res);
+console.log("slice methods : " + res);
+
+items1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+itms2 = [];
+let res1 = items1.splice(0, 5);
+console.log("splice methods : " + items1);
+
+console.log(Math.floor(Math.random() + 1));
+
+fac_num = [1, 2, 3, 4, 5];
+let fac_res = 1;
+for (let x = 1; x <= fac_num.length; x++) {
+  fac_res = fac_res * x;
+}
+console.log("Factorial with loop " + fac_res);
+
+function factt(fac) {
+  let fac_res = 1;
+  for (let x = 1; x <= fac.length; x++) {
+    fac_res = fac_res * x;
+  }
+  console.log("Factorial with function " + fac_res);
+}
+
+factt([1, 2, 3, 4, 5, 6, 7]);
+
+let a = "hello";
+console.log(a);
+let b = "hello".replace(/l/g, "lllllll");
+console.log(b);
+
+
+
