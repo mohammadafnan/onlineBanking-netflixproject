@@ -134,15 +134,19 @@ function checkdis() {
     showdes.textContent =
       "Current price is " +
       price.value +
-      " and You got Special Discount (Coupon code)" +
+      " and You got Special Discount (Coupon code " +
+       coupondiscount.value +
+      " )" +
       discountprice.value +
       "% Discount " +
-      "and your Discounted price is " +
+      " and your Discounted price is " +
       discountfind;
     showdes.style.color = "white";
     showdes.style.backgroundColor = "#1545c9";
     showdes.style.marginTop = "10px";
     showdes.style.padding = "10px";
+    price.value = "";
+    coupondiscount.value = "";
   } else {
     var discountfind = price.value - (price.value * discountprice.value) / 100;
     /discount calc formular/;
@@ -160,7 +164,7 @@ function checkdis() {
     showdes.style.backgroundColor = "green";
     showdes.style.marginTop = "10px";
     showdes.style.padding = "10px";
-    price.value = 0;
+    price.value = "";
   }
 }
 
