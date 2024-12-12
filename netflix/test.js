@@ -168,8 +168,4 @@ function checkdis() {
   }
 }
 
-// function reset() {
-//   var price = document.getElementById("price");
 
-//   price.value = 0;
-// }
