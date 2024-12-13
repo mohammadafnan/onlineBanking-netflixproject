@@ -148,6 +148,7 @@ function checkdis() {
     price.value = "";
     coupondiscount.value = "";
   } else {
+    discountprice.value = 20;
     var discountfind = price.value - (price.value * discountprice.value) / 100;
     /discount calc formular/;
 
