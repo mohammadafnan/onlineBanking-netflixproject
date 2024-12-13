@@ -135,7 +135,7 @@ function checkdis() {
       "Current price is " +
       price.value +
       " and You got Special Discount (Coupon code " +
-       coupondiscount.value +
+      coupondiscount.value +
       " )" +
       discountprice.value +
       "% Discount " +
@@ -168,5 +168,3 @@ function checkdis() {
     price.value = "";
   }
 }
-
-

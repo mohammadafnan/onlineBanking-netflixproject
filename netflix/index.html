@@ -11,6 +11,7 @@
       body {
         background: rgb(32, 32, 32);
         color: aliceblue;
+        /* overflow-y: hidden; */
       }
       h1 {
         text-align: center;
@@ -24,7 +25,7 @@
       }
       .bottomfixed {
         position: absolute;
-        bottom: 0;
+        bottom: 10px;
       }
 
       input {
@@ -57,9 +58,9 @@
       <label for="">Coupon Code</label><sup> (Special Discount)</sup><br />
       <input id="Coupon" type="number" placeholder="Enter Coupon Code" /><br />
       <button id="btn" onclick="checkdis()">Check</button><br />
-      <ul class="bottomfixed">
-        <li><label id="desc"></label></li>
-      </ul>
+      <div class="bottomfixed">
+        <div><label id="desc"></label></div>
+      </div>
     </div>
   </body>
 </html>
