@@ -133,4 +133,5 @@ const u3 = new u2();
 // u3.name = "asd"
 console.log(u3.name);
 
+console.log("sad");
 
