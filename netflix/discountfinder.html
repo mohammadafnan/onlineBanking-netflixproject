@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./discountfinder.js"></script>
+  </head>
+  <body>
+    <style>
+      body {
+        background: rgb(32, 32, 32);
+        color: aliceblue;
+        /* overflow-y: hidden; */
+      }
+      h1 {
+        text-align: center;
+      }
+
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .bottomfixed {
+        position: absolute;
+        bottom: 10px;
+      }
+
+      input {
+        width: 210px;
+        border: 2px solid aliceblue;
+        height: 30px;
+        background-color: transparent;
+        color: aliceblue;
+      }
+      button {
+        width: 220px;
+        border: 0;
+        height: 30px;
+      }
+    </style>
+    <h1>Discount Finder</h1>
+    <div class="main">
+      <label for="">Price</label><br />
+      <input id="price" type="number" placeholder="Enter price" /><br />
+      <label for="">Discount %</label>
+      <input
+        style="background-color: green; color: aliceblue; border: 0"
+        id="discount"
+        type="number"
+        placeholder="Enter Discount %"
+        value="20"
+        readonly
+      />
+      <br />
+      <label for="">Coupon Code</label><sup> (Special Discount)</sup><br />
+      <input id="Coupon" type="number" placeholder="Enter Coupon Code" /><br />
+      <button id="btn" onclick="checkdis()">Check</button><br />
+      <div class="bottomfixed">
+        <div><label id="desc"></label></div>
+      </div>
+    </div>
+  </body>
+</html>
