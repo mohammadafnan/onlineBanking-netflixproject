@@ -12,30 +12,37 @@
         background: rgb(32, 32, 32);
         color: aliceblue;
       }
+      h1 {
+        text-align: center;
+      }
+
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
     </style>
     <h1>Discount Finder</h1>
-    <label for="">Price</label>
-    <input
-      id="price"
-      type="number"
-      placeholder="Enter price"
-   
-    />
-    <label for="">Discount %</label>
-    <input
-      style="background-color: green; color: aliceblue; border: 0"
-      id="discount"
-      type="number"
-      placeholder="Enter Discount %"
-      value="20"
-      readonly
-    />
-    <label for="">Coupon Code</label><sup> (Special Discount)</sup>
-    <input id="Coupon" type="number" placeholder="Enter Coupon Code" />
-    <button id="btn" onclick="checkdis()">Check</button>
-
-    <ul>
-      <li><label id="desc"></label></li>
-    </ul>
+    <div class="main">
+      <label for="">Price</label><br />
+      <input id="price" type="number" placeholder="Enter price" /><br />
+      <label for="">Discount %</label>
+      <input
+        style="background-color: green; color: aliceblue; border: 0"
+        id="discount"
+        type="number"
+        placeholder="Enter Discount %"
+        value="20"
+        readonly
+      />
+      <br />
+      <label for="">Coupon Code</label><sup> (Special Discount)</sup><br />
+      <input id="Coupon" type="number" placeholder="Enter Coupon Code" /><br />
+      <button id="btn" onclick="checkdis()">Check</button><br />
+      <ul>
+        <li><label id="desc"></label></li>
+      </ul>
+    </div>
   </body>
 </html>
