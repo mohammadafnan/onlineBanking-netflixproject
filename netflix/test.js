@@ -1,6 +1,21 @@
 // function add(a:number,b:number) {
 //  console.log(a + b);
 // }
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // add(5,10);
 var data1 = 100;
 var data2 = 15;
@@ -114,3 +129,38 @@ var u3 = new u2();
 // u3.name = "asd"
 console.log(u3.name);
 console.log("sad");
+//Start inheritance code
+var Emaillist = /** @class */ (function () {
+    function Emaillist() {
+    }
+    Emaillist.prototype.email = function (emaill) {
+        return "".concat(emaill, " @gmail.com");
+    };
+    return Emaillist;
+}());
+var Users = /** @class */ (function (_super) {
+    __extends(Users, _super);
+    function Users() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Users.prototype.adduser = function (username) {
+        return "".concat(username, " is added");
+    };
+    return Users;
+}(Emaillist));
+var adduser = new Users();
+console.log(adduser.adduser("farooq"));
+console.log(adduser.email("farooq"));
+var empoyee = /** @class */ (function (_super) {
+    __extends(empoyee, _super);
+    function empoyee() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    empoyee.prototype.addempolyee = function (empname) {
+        return "".concat(empname, " is added");
+    };
+    return empoyee;
+}(Emaillist));
+var emp = new empoyee();
+console.log(emp.addempolyee("adnan"));
+console.log(emp.email("adnan"));

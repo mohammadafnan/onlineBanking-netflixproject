@@ -135,3 +135,29 @@ console.log(u3.name);
 
 console.log("sad");
 
+//Start inheritance code
+
+class Emaillist {
+  email(emaill) {
+    return `${emaill} @gmail.com`;
+  }
+}
+class Users extends Emaillist {
+  adduser(username) {
+    return `${username} is added`;
+  }
+}
+
+const adduser = new Users();
+console.log(adduser.adduser("farooq"));
+console.log(adduser.email("farooq"));
+
+class empoyee extends Emaillist {
+  addempolyee(empname) {
+    return `${empname} is added`;
+  }
+}
+
+const emp = new empoyee();
+console.log(emp.addempolyee("adnan"));
+console.log(emp.email("adnan"));
