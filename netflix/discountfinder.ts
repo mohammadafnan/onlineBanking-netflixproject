@@ -21,10 +21,17 @@ function checkdis() {
       (Number(price.value) * Number(discountprice.value)) / 100;
 
     // Discount calculation
- 
+
     showdes.textContent =
-    "Current price is " + price.value + " " + "and You got Special Discount (Coupon code " + coupondiscount.value +
-     " )" + discountprice.value + "% Discount and your Discounted price is " + discountfind ;
+      "Current price is " +
+      price.value +
+      " " +
+      "and You got Special Discount (Coupon code " +
+      coupondiscount.value +
+      " )" +
+      discountprice.value +
+      "% Discount and your Discounted price is " +
+      discountfind;
 
     showdes.style.color = "white";
     showdes.style.backgroundColor = "#1545c9";
@@ -41,7 +48,9 @@ function checkdis() {
 
     // Discount calculation
     showdes.textContent =
-      `Current price is ${price.value} and You got ${discountprice.value}% Discount ` +
+    
+      `Current price is ${price.value}
+       and You got ${discountprice.value}% Discount ` +
       `and your Discounted price is ${discountfind}`;
 
     showdes.style.color = "white";
